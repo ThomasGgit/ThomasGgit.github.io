@@ -1,7 +1,94 @@
 <!DOCTYPE html>
 <html>
-<body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
-</body>
+	<head>
+		<title>Driftkort</title>
+
+		<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+		<script src="https://unpkg.com/stackedit-js@1.0.7/docs/lib/stackedit.min.js"></script>
+
+
+		<link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+		
+		<style>
+			html {
+				height: 100%;
+			}
+
+			body {
+				height: 100%;
+				margin: 0;
+				font-family: Ubuntu;
+				background: linear-gradient(#b3ffab, #67fffc);
+			}
+
+			#header {
+				height: 30px;
+				display: flex;
+				align-items: center;
+				background: linear-gradient(#444444, #333333);
+				color: #bbbbbb;
+			}
+
+			#headerContent {
+				margin-left: 10px;
+			}
+
+			#page {
+				display: flex;
+				height: calc( 100vh - 30px);
+				/* calculate the height. Header is 30px */
+			}
+
+			#sideBar {
+				width: 100px;
+				background: red;
+			}
+
+			#content {
+				background: blue;
+				flex: 1 0 auto;
+				/* enable grow, disable shrink */
+			}
+		</style>
+
+		<script>
+  
+			$(document).ready(function(){
+				var el = $('#content');
+				
+				const stackedit = new Stackedit();
+				
+				console.log(el.text());
+				// Open the iframe
+				stackedit.openFile({
+					name: 'test1', // with an optional filename
+					content: { text: 'Hello **Markdown** writer!' }
+				}, true /* silent mode */);
+
+				// Listen to StackEdit events and apply the changes to the textarea.
+				stackedit.on('fileChange', (file) => {
+					
+					console.log(file);
+					el.html(file.content.text);
+				});
+				
+			});
+		</script>
+
+	</head>
+
+	<body>
+		<div id="header">
+			<div id="headerContent">Desktop</div>
+		</div>
+
+		<div id="page">
+			<div id="sideBar">
+				<div>box 1</div>
+				<div>box 2</div>
+			</div>
+			<div id="content">***hej***</div>
+		</div>
+
+	</body>
 </html>
