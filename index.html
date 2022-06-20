@@ -36,16 +36,14 @@
 			#page {
 				display: flex;
 				height: calc( 100vh - 30px);
-				/* calculate the height. Header is 30px */
 			}
 
 			#sideBar {
 				width: 100px;
-				background: red;
+				background: grey;
 			}
 
 			#content {
-				background: blue;
 				flex: 1 0 auto;
 				/* enable grow, disable shrink */
 			}
@@ -69,6 +67,13 @@
 				const stackedit = new Stackedit();
 				
 				//console.log(el.text());
+				
+				$.get( "/Example/Fastighet01/Undercentral.md", function( data ) {
+					  //$( ".result" ).html( data );
+					console.log(data);
+					alert( "Load was performed." );
+				});
+				
 				
 				el.load("/Example/Fastighet01/Undercentral.md", function(responseTxt, statusTxt, xhr) {
 					
