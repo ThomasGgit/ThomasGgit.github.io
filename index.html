@@ -52,7 +52,12 @@
 		</style>
 
 		<script>
-  
+			/*
+				https://benweet.github.io/stackedit.js/
+				https://thomasggit.github.io/
+				https://zerodevx.github.io/zero-md/
+				
+			*/
 			$(document).ready(function(){
 				var el = $('#content');
 				
@@ -60,16 +65,24 @@
 				
 				console.log(el.text());
 				
-				el.load("test.md"); 
+				el.load("test.md", function(responseTxt, statusTxt, xhr) {
+					
+					console.log(responseTxt);
+					stackedit.openFile({
+						name: 'test.md', // with an optional filename
+						//content: { text: 'Hello **Markdown** writer!' }
+						content: { text: responseTxt }
+					}, true);
+				});
 				console.log(el.text());
 				
-				// Open the iframe
+				/*// Open the iframe
 				stackedit.openFile({
 					name: 'test.md', // with an optional filename
 					//content: { text: 'Hello **Markdown** writer!' }
 					content: { text: el.text() }
-				}, true /* silent mode */);
-
+				}, true);
+*/
 				// Listen to StackEdit events and apply the changes to the textarea.
 				stackedit.on('fileChange', (file) => {
 					console.log(file);
