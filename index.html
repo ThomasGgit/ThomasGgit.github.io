@@ -61,11 +61,11 @@
 				console.log(el.text());
 				
 				el.load("test.md"); 
-				
+				console.log(el.text());
 				
 				// Open the iframe
 				stackedit.openFile({
-					name: 'test1', // with an optional filename
+					name: 'test.md', // with an optional filename
 					//content: { text: 'Hello **Markdown** writer!' }
 					content: { text: el.text() }
 				}, true /* silent mode */);
