@@ -53,9 +53,13 @@
 
 		<script>
 			/*
-				https://benweet.github.io/stackedit.js/
 				https://thomasggit.github.io/
+				
+				https://benweet.github.io/stackedit.js/
+				
 				https://zerodevx.github.io/zero-md/
+				
+				https://github.com/nodeca/js-yaml
 				
 			*/
 			$(document).ready(function(){
@@ -64,14 +68,12 @@
 				
 				const stackedit = new Stackedit();
 				
-				console.log(el.text());
+				//console.log(el.text());
 				
 				el.load("test.md", function(responseTxt, statusTxt, xhr) {
 					
-					console.log(responseTxt);
+					//console.log(responseTxt);
 					stackedit.openFile({
-						//name: 'test.md', // with an optional filename
-						//content: { text: 'Hello **Markdown** writer!' }
 						content: { text: responseTxt }
 					}, true);
 					
@@ -105,7 +107,7 @@
 				<div>box 1</div>
 				<div>box 2</div>
 			</div>
-			<div id="content">***hej***</div>
+			<div id="content"></div>
 		</div>
 
 	</body>
