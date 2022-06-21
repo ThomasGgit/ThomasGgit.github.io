@@ -68,7 +68,7 @@
 			var Sidintro = {};
 			
 			$(document).ready(function(){
-				console.log('Version 0.0.0.12');
+				console.log('Version 0.0.0.13');
 				
 				const stackedit = new Stackedit();
 				
@@ -81,6 +81,12 @@
 					undercentral.yaml = test[1].trim();
 					undercentral.text = test[2].trim();
 					
+					
+					
+					console.log(undercentral);
+					
+					undercentral.yaml
+					
 					console.log(undercentral);
 					labb1();
 				});
@@ -89,10 +95,8 @@
 					console.log(data);
 					
 					AI_Controller.raw = data;
-					var test = data.split("%%");
-					
-					AI_Controller.yaml = test[1].trim();
-					AI_Controller.text = test[2].trim();
+					AI_Controller.yaml = null;
+					AI_Controller.text = data;
 					
 					console.log(AI_Controller);
 					labb1();
@@ -102,10 +106,8 @@
 					console.log(data);
 					
 					Framledningsreglering.raw = data;
-					var test = data.split("%%");
-					
-					Framledningsreglering.yaml = test[1].trim();
-					Framledningsreglering.text = test[2].trim();
+					Framledningsreglering.yaml = null;
+					Framledningsreglering.text = data;
 					
 					console.log(Framledningsreglering);
 					labb1();
@@ -115,10 +117,8 @@
 					console.log(data);
 					
 					Pumpstart.raw = data;
-					var test = data.split("%%");
-					
-					Pumpstart.yaml = test[1].trim();
-					Pumpstart.text = test[2].trim();
+					Pumpstart.yaml = null;
+					Pumpstart.text = data;
 					
 					console.log(Pumpstart);
 					labb1();
@@ -128,10 +128,8 @@
 					console.log(data);
 					
 					Sidintro.raw = data;
-					var test = data.split("%%");
-					
-					Sidintro.yaml = test[1].trim();
-					Sidintro.text = test[2].trim();
+					Sidintro.yaml = null;
+					Sidintro.text = data;
 					
 					console.log(Sidintro);
 					labb1();
