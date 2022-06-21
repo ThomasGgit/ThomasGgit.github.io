@@ -71,9 +71,10 @@
 				console.log('Version 0.0.0.13');
 				
 				const stackedit = new Stackedit();
+				const jsyaml = new js-yaml();
 				
 				$.get( "/Example/Fastighet01/Undercentral.md", function( data ) {
-					console.log(data);
+					//console.log(data);
 					
 					undercentral.raw = data;
 					var test = data.split("%%");
@@ -85,14 +86,15 @@
 					
 					console.log(undercentral);
 					
-					undercentral.yaml
+					import { load } from "js-yaml";
+					undercentral.yaml = load(test[1].trim());
 					
 					console.log(undercentral);
 					labb1();
 				});
 				
 				$.get( "/Example/Malltexter/AI_Controller.md", function( data ) {
-					console.log(data);
+					//console.log(data);
 					
 					AI_Controller.raw = data;
 					AI_Controller.yaml = null;
@@ -103,7 +105,7 @@
 				});
 				
 				$.get( "/Example/Malltexter/Framledningsreglering.md", function( data ) {
-					console.log(data);
+					//console.log(data);
 					
 					Framledningsreglering.raw = data;
 					Framledningsreglering.yaml = null;
@@ -114,7 +116,7 @@
 				});
 				
 				$.get( "/Example/Malltexter/Pumpstart.md", function( data ) {
-					console.log(data);
+					//console.log(data);
 					
 					Pumpstart.raw = data;
 					Pumpstart.yaml = null;
@@ -125,7 +127,7 @@
 				});
 				
 				$.get( "/Example/Malltexter/Sidintro.md", function( data ) {
-					console.log(data);
+					//console.log(data);
 					
 					Sidintro.raw = data;
 					Sidintro.yaml = null;
