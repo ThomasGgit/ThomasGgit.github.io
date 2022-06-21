@@ -1,16 +1,17 @@
 %%
-system: FJV
-  components:
-    meter: PV601
-    forwardtemp: GT101
-    returntemp: GT102
+systems:
 
-system: VS01
-  components:
-    pump: PV601
-    forwardtemp: GT101
-    returntemp: GT102
-
+  - name: FJV
+    components:
+      meter: PV601
+      forwardtemp: GT101
+      returntemp: GT102
+  
+  - name: VS01
+    components:
+      meter: PV601
+      forwardtemp: GT101
+      returntemp: GT102
 %%
 ![[Sidintro]]
 ![[AI_Controller]]
