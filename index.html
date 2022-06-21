@@ -44,7 +44,7 @@
 			}
 
 			#content {
-				flex: 1 0 auto;
+				flex: 0 0 auto;
 				/* enable grow, disable shrink */
 			}
 		</style>
@@ -185,7 +185,7 @@
 					if (undercentral.yaml.systems[0].components.pump != undefined)
 						undercentral.text = undercentral.text.replace("{{pump}}", undercentral.yaml.systems[0].components.pump);
 					
-					console.log(undercentral.text);
+					//console.log(undercentral.text);
 					
 					stackedit.openFile({
 						content: { text: undercentral.text }
