@@ -61,6 +61,10 @@
 				
 			*/
 			var undercentral = {};
+			var AI_Controller = {};
+			var Framledningsreglering = {};
+			var Pumpstart = {};
+			var Sidintro = {};
 			
 			$(document).ready(function(){
 				console.log('Version 0.0.0.12');
@@ -77,6 +81,58 @@
 					undercentral.text = test[2].trim();
 					
 					console.log(undercentral);
+					labb1();
+				});
+				
+				$.get( "/Example/Malltexter/AI_Controller.md", function( data ) {
+					  //$( ".result" ).html( data );
+					
+					AI_Controller.raw = data;
+					var test = data.split("%%");
+					
+					AI_Controller.yaml = test[1].trim();
+					AI_Controller.text = test[2].trim();
+					
+					console.log(AI_Controller);
+					labb1();
+				});
+				
+				$.get( "/Example/Malltexter/Framledningsreglering.md", function( data ) {
+					  //$( ".result" ).html( data );
+					
+					Framledningsreglering.raw = data;
+					var test = data.split("%%");
+					
+					Framledningsreglering.yaml = test[1].trim();
+					Framledningsreglering.text = test[2].trim();
+					
+					console.log(Framledningsreglering);
+					labb1();
+				});
+				
+				$.get( "/Example/Malltexter/Pumpstart.md", function( data ) {
+					  //$( ".result" ).html( data );
+					
+					Pumpstart.raw = data;
+					var test = data.split("%%");
+					
+					Pumpstart.yaml = test[1].trim();
+					Pumpstart.text = test[2].trim();
+					
+					console.log(Pumpstart);
+					labb1();
+				});
+				
+				$.get( "/Example/Malltexter/Sidintro.md", function( data ) {
+					  //$( ".result" ).html( data );
+					
+					Sidintro.raw = data;
+					var test = data.split("%%");
+					
+					Sidintro.yaml = test[1].trim();
+					Sidintro.text = test[2].trim();
+					
+					console.log(Sidintro);
 					labb1();
 				});
 				
@@ -103,9 +159,16 @@
 			
 			var doneCount = 0;
 			function labb1 () {
-				if (++doneCount == 4){
+				if (++doneCount == 5){
 				
 					var el = $('#content');
+					
+					
+					undercentral.text.replace("![[AI_Controller]]", AI_Controller.text);
+					undercentral.text.replace("![[Framledningsreglering]]", Framledningsreglering.text);
+					undercentral.text.replace("![[Pumpstart]]", Pumpstart.text);
+					undercentral.text.replace("![[Sidintro]]", Sidintro.text);
+					
 					
 					stackedit.openFile({
 						content: { text: responseTxt }
