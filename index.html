@@ -68,10 +68,18 @@
 				
 				//console.log(el.text());
 				
+				
+				var undercentral;
 				$.get( "/Example/Fastighet01/Undercentral.md", function( data ) {
 					  //$( ".result" ).html( data );
-					console.log(data);
-					alert( "Load was performed." );
+					
+					undercentral.raw = data;
+					var test = data.split("%%");
+					
+					undercentral.yaml = test[1];
+					undercentral.text = test[2];
+					
+					console.log(undercentral);
 				});
 				
 				

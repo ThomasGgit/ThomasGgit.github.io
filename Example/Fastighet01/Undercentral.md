@@ -12,7 +12,6 @@ system: VS01
 		returntemp: GT102
 	
 %%
-
 ![[Sidintro]]
 ![[AI_Controller]]
 ![[Pumpstart]]
