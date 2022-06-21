@@ -5,7 +5,7 @@
 
 		<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 		<script src="https://unpkg.com/stackedit-js@1.0.7/docs/lib/stackedit.min.js"></script>
-
+		<script type="text/javascript" src="yaml.js"></script>
 
 		<link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 		
@@ -85,7 +85,8 @@
 					
 					console.log(undercentral);
 					
-					undercentral.yaml = YAML.eval(test[1].trim());
+					//undercentral.yaml = YAML.eval(test[1].trim());
+					undercentral.yaml = YAML.parse(test[1].trim());
 					
 					console.log(undercentral);
 					labb1();
@@ -186,7 +187,7 @@
 			
 			
 			
-			;(function(){
+			/*;(function(){
 			  YAML = {
 				valueOf: function(token) {
 				  return eval('(' + token + ')')
@@ -219,7 +220,7 @@
 				  return this.parse(this.tokenize(str))
 				}
 			  }
-			})()
+			})()*/
 		</script>
 
 	</head>
