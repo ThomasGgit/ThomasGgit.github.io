@@ -10,7 +10,7 @@ system: VS01
     pump: PV601
     forwardtemp: GT101
     returntemp: GT102
-	
+
 %%
 ![[Sidintro]]
 ![[AI_Controller]]
