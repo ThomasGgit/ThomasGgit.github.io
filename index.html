@@ -67,11 +67,12 @@
 			var Pumpstart = {};
 			var Sidintro = {};
 			
+			const stackedit = new Stackedit();
+			const jsyaml = new js-yaml();
+				
 			$(document).ready(function(){
 				console.log('Version 0.0.0.13');
 				
-				const stackedit = new Stackedit();
-				const jsyaml = new js-yaml();
 				
 				$.get( "/Example/Fastighet01/Undercentral.md", function( data ) {
 					//console.log(data);
