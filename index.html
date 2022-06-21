@@ -60,24 +60,21 @@
 				https://github.com/nodeca/js-yaml
 				
 			*/
+			var undercentral = {};
+			
 			$(document).ready(function(){
 				console.log('Version 0.0.0.11');
-				var el = $('#content');
 				
 				const stackedit = new Stackedit();
 				
-				//console.log(el.text());
-				
-				
-				var undercentral = {};
 				$.get( "/Example/Fastighet01/Undercentral.md", function( data ) {
 					  //$( ".result" ).html( data );
 					
 					undercentral.raw = data;
 					var test = data.split("%%");
 					
-					undercentral.yaml = test[1];
-					undercentral.text = test[2];
+					undercentral.yaml = test[1].trim();
+					undercentral.text = test[2].trim();
 					
 					console.log(undercentral);
 				});
@@ -100,15 +97,24 @@
 				}, true);
 */
 				// Listen to StackEdit events and apply the changes to the textarea.
-				stackedit.on('fileChange', (file) => {
-					console.log(file);
-					el.html(file.content.html);
-				});
 				
 			});
 			
 			function labb1 () {
+				if (doneCount = 4){
 				
+					var el = $('#content');
+					
+					stackedit.openFile({
+						content: { text: responseTxt }
+					}, true);
+					
+					
+					stackedit.on('fileChange', (file) => {
+						console.log(file);
+						el.html(file.content.html);
+					});
+				}
 			}
 			
 		</script>
