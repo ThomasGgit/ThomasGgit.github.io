@@ -1,6 +1,6 @@
 %%
-Apparatskåp: AS01
-Placering: Plan 4
+cabinet: AS01
+positioned: Plan 4
 systems:
 
   - name: FJV
