@@ -5,6 +5,7 @@
 
 		<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 		<script src="https://unpkg.com/stackedit-js@1.0.7/docs/lib/stackedit.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js" integrity="sha512-CSBhVREyzHAjAFfBlIBakjoRUKp5h7VSweP0InR/pAJyptH7peuhCsqAI/snV+TwZmXZqoUklpXp6R6wMnYf5Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 
 		<link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -72,7 +73,7 @@
 				const stackedit = new Stackedit();
 				
 				$.get( "/Example/Fastighet01/Undercentral.md", function( data ) {
-					  //$( ".result" ).html( data );
+					console.log(data);
 					
 					undercentral.raw = data;
 					var test = data.split("%%");
@@ -85,7 +86,7 @@
 				});
 				
 				$.get( "/Example/Malltexter/AI_Controller.md", function( data ) {
-					  //$( ".result" ).html( data );
+					console.log(data);
 					
 					AI_Controller.raw = data;
 					var test = data.split("%%");
@@ -98,7 +99,7 @@
 				});
 				
 				$.get( "/Example/Malltexter/Framledningsreglering.md", function( data ) {
-					  //$( ".result" ).html( data );
+					console.log(data);
 					
 					Framledningsreglering.raw = data;
 					var test = data.split("%%");
@@ -111,7 +112,7 @@
 				});
 				
 				$.get( "/Example/Malltexter/Pumpstart.md", function( data ) {
-					  //$( ".result" ).html( data );
+					console.log(data);
 					
 					Pumpstart.raw = data;
 					var test = data.split("%%");
@@ -124,7 +125,7 @@
 				});
 				
 				$.get( "/Example/Malltexter/Sidintro.md", function( data ) {
-					  //$( ".result" ).html( data );
+					console.log(data);
 					
 					Sidintro.raw = data;
 					var test = data.split("%%");
@@ -168,6 +169,8 @@
 					undercentral.text.replace("![[Framledningsreglering]]", Framledningsreglering.text);
 					undercentral.text.replace("![[Pumpstart]]", Pumpstart.text);
 					undercentral.text.replace("![[Sidintro]]", Sidintro.text);
+					
+					undercentral.yaml
 					
 					
 					stackedit.openFile({
