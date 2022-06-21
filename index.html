@@ -165,23 +165,23 @@
 					
 					console.log(undercentral.text);
 					
-					undercentral.text.replace(/![[AI_Controller]]/g, AI_Controller.text);
-					undercentral.text.replace(/![[Framledningsreglering]]/g, Framledningsreglering.text);
-					undercentral.text.replace(/![[Pumpstart]]/g, Pumpstart.text);
-					undercentral.text.replace(/![[Sidintro]]/g, Sidintro.text);
+					undercentral.text = undercentral.text.replace(/![[AI_Controller]]/g, AI_Controller.text);
+					undercentral.text = undercentral.text.replace(/![[Framledningsreglering]]/g, Framledningsreglering.text);
+					undercentral.text = undercentral.text.replace(/![[Pumpstart]]/g, Pumpstart.text);
+					undercentral.text = undercentral.text.replace(/![[Sidintro]]/g, Sidintro.text);
 					
 					console.log(undercentral.text);
 					
 					//undercentral.yaml
 					
 					if (undercentral.yaml.cabinet != undefined)
-						undercentral.text.replace("{{cabinet}}", undercentral.yaml.cabinet);
+						undercentral.text = undercentral.text.replace("{{cabinet}}", undercentral.yaml.cabinet);
 					if (undercentral.yaml.positioned != undefined)
-						undercentral.text.replace("{{positioned}}", undercentral.yaml.positioned);
+						undercentral.text = undercentral.text.replace("{{positioned}}", undercentral.yaml.positioned);
 					if (undercentral.yaml.systems[0].components.forwardtemp != undefined)
-						undercentral.text.replace("{{forwardtemp}}", undercentral.yaml.systems[0].components.forwardtemp);
+						undercentral.text = undercentral.text.replace("{{forwardtemp}}", undercentral.yaml.systems[0].components.forwardtemp);
 					if (undercentral.yaml.systems[0].components.returntemp != undefined)
-						undercentral.text.replace("{{returntemp}}", undercentral.yaml.systems[0].components.returntemp);
+						undercentral.text = undercentral.text.replace("{{returntemp}}", undercentral.yaml.systems[0].components.returntemp);
 					
 					console.log(undercentral.text);
 					
