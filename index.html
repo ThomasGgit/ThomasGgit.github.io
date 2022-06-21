@@ -163,15 +163,27 @@
 				
 					var el = $('#content');
 					
+					console.log(undercentral.text);
 					
 					undercentral.text.replace("![[AI_Controller]]", AI_Controller.text);
 					undercentral.text.replace("![[Framledningsreglering]]", Framledningsreglering.text);
 					undercentral.text.replace("![[Pumpstart]]", Pumpstart.text);
 					undercentral.text.replace("![[Sidintro]]", Sidintro.text);
 					
+					console.log(undercentral.text);
+					
 					//undercentral.yaml
 					
-					//undercentral.text.replace();
+					if (undercentral.yaml.cabinet != undefined)
+						undercentral.text.replace("{{cabinet}}", undercentral.yaml.cabinet);
+					if (undercentral.yaml.positioned != undefined)
+						undercentral.text.replace("{{positioned}}", undercentral.yaml.positioned);
+					if (undercentral.yaml.systems[0].components.forwardtemp != undefined)
+						undercentral.text.replace("{{forwardtemp}}", undercentral.yaml.systems[0].components.forwardtemp);
+					if (undercentral.yaml.systems[0].components.returntemp != undefined)
+						undercentral.text.replace("{{returntemp}}", undercentral.yaml.systems[0].components.returntemp);
+					
+					console.log(undercentral.text);
 					
 					stackedit.openFile({
 						content: { text: undercentral.text }
