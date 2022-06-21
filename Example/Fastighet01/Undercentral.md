@@ -8,12 +8,14 @@ systems:
       meter: PV601
       forwardtemp: GT101
       returntemp: GT102
+      pump: CP104
   
   - name: VS01
     components:
       meter: PV601
       forwardtemp: GT101
       returntemp: GT102
+      pump: CP103
 %%
 ![[Sidintro]]
 
