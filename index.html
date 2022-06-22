@@ -235,24 +235,17 @@
 						var systemName;
 						text[i] = text[i].replace(/#system-[A-Ö,0-9]+\s/i, function (x){
 							systemName = x.replace("#system-", "").trim();
-							return "## System " + systemName;
+							return "## System " + systemName + "\n";
 						});
-						console.log(systemName);
+						//console.log(systemName);
 						
 						if (systemName != undefined) {
 							var yaml2;
 							for (var j=0;j<undercentral.yaml.systems.length; j++) {
-								console.log("Hej4");
-								console.log(undercentral.yaml.systems[j].name);
-								console.log((undercentral.yaml.systems[j].name.trim() === systemName));
-								
-								if (undercentral.yaml.systems[j].name.trim() === systemName) {
-									console.log("Hej5");
+								if (undercentral.yaml.systems[j].name.trim() === systemName)
 									yaml2 = undercentral.yaml.systems[j];
-								}
 							}
 							if (yaml2 != undefined) {
-								console.log("Hej6");
 								if (yaml2.components.forwardtemp != undefined)
 									text[i] = text[i].replace(/#forwardtemp/g, yaml2.components.forwardtemp);
 								if (yaml2.components.returntemp != undefined)
