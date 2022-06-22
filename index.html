@@ -3,6 +3,8 @@
 	<head>
 		<title>Driftkort</title>
 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 		<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 		<script src="https://unpkg.com/stackedit-js@1.0.7/docs/lib/stackedit.min.js"></script>
 		<script type="text/javascript" src="yaml.js"></script>
@@ -10,42 +12,59 @@
 		<link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 		
 		<style>
-			html {
-				height: 100%;
-			}
-
 			body {
-				height: 100%;
-				margin: 0;
-				font-family: Ubuntu;
-				background: linear-gradient(#b3ffab, #67fffc);
+			  margin: 0;
+			  font-family: "Lato", sans-serif;
 			}
 
-			#header {
-				height: 30px;
-				display: flex;
-				align-items: center;
-				background: linear-gradient(#444444, #333333);
-				color: #bbbbbb;
+			.sidebar {
+			  margin: 0;
+			  padding: 0;
+			  width: 200px;
+			  background-color: #f1f1f1;
+			  position: fixed;
+			  height: 100%;
+			  overflow: auto;
 			}
 
-			#headerContent {
-				margin-left: 10px;
+			.sidebar a {
+			  display: block;
+			  color: black;
+			  padding: 16px;
+			  text-decoration: none;
+			}
+			 
+			.sidebar a.active {
+			  background-color: #04AA6D;
+			  color: white;
 			}
 
-			#page {
-				display: flex;
-				height: calc( 100vh - 30px);
+			.sidebar a:hover:not(.active) {
+			  background-color: #555;
+			  color: white;
 			}
 
-			#sideBar {
-				width: 100px;
-				background: grey;
+			div.main {
+			  margin-left: 200px;
+			  padding: 1px 16px;
+			  height: 1000px;
 			}
 
-			#content {
-				flex: 0 0 auto;
-				/* enable grow, disable shrink */
+			@media screen and (max-width: 700px) {
+			  .sidebar {
+				width: 100%;
+				height: auto;
+				position: relative;
+			  }
+			  .sidebar a {float: left;}
+			  div.main {margin-left: 0;}
+			}
+
+			@media screen and (max-width: 400px) {
+			  .sidebar a {
+				text-align: center;
+				float: none;
+			  }
 			}
 		</style>
 
@@ -241,15 +260,13 @@
 	</head>
 
 	<body>
-		<div id="header">
-			<div id="headerContent">Desktop</div>
-		</div>
 
-		<div id="page">
-			<div id="sideBar">
-				<div>FJV</div>
-				<div>VS01</div>
-			</div>
+		<div class="sidenav">
+			<a href="#">FJV</a>
+			<a href="#">VS01</a>
+		</div>
+			
+		<div class="main">
 			<div id="content"></div>
 		</div>
 
