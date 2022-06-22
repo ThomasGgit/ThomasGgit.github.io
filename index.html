@@ -180,11 +180,12 @@
 					
 					//console.log(undercentral.text);
 					
-					undercentral.text = undercentral.text.replace(/![[AI_Controller]]/gi, AI_Controller.text);
-					undercentral.text = undercentral.text.replace(/![[Framledningsreglering]]/gi, Framledningsreglering.text);
-					undercentral.text = undercentral.text.replace(/![[Pumpstart]]/gi, Pumpstart.text);
-					undercentral.text = undercentral.text.replace(/![[Sidintro]]/gi, Sidintro.text);
-					
+					for (var i=0;i<10; i++) {
+						undercentral.text = undercentral.text.replace("![[AI_Controller]]", AI_Controller.text);
+						undercentral.text = undercentral.text.replace("![[Framledningsreglering]]", Framledningsreglering.text);
+						undercentral.text = undercentral.text.replace("![[Pumpstart]]", Pumpstart.text);
+						undercentral.text = undercentral.text.replace("![[Sidintro]]", Sidintro.text);
+					}
 					//console.log(undercentral.text);
 					
 					var test1Old = 0;
