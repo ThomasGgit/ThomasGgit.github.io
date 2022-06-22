@@ -4,6 +4,6 @@ Lorem ipsum dolor sit amet #forwardtemp, consectetur adipiscing elit. Aliquam el
 Nullam orci velit, finibus eu tortor non, porttitor imperdiet nisl. Curabitur ut libero id purus ultrices maximus sit amet ut arcu. Pellentesque suscipit arcu in leo suscipit lobortis. Phasellus risus odio, ultrices ac lacus eget, tincidunt faucibus ligula. Ut consectetur enim vitae velit bibendum, eget scelerisque nisl ullamcorper. Nullam non risus at tellus malesuada bibendum ac sed ex. Proin iaculis bibendum pharetra. Duis vitae fermentum quam. Morbi luctus aliquam elit. In in vulputate massa. Integer viverra augue ut arcu tempus, eget hendrerit urna cursus. Integer eleifend, ipsum eget egestas efficitur, elit ante ultrices eros, non vehicula tortor nulla id nisi. Pellentesque pretium diam placerat, sollicitudin ligula in, mollis eros. Donec magna lorem, hendrerit vitae tellus et, varius laoreet ligula. Nam non aliquam turpis.
 
 #### Table
-Objekt|bla|bla|bla
------|-----|-----|-----
+Objekt|Larmprioritet|Inställning|Beskrivning
+------|------|------|------
 #forwardtemp|B|10°C|Börvärde
