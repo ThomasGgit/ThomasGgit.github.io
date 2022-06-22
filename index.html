@@ -77,6 +77,23 @@
 				
 				https://github.com/jeremyfa/yaml.js
 				
+				
+				Krav:
+					Inlogg
+					URL
+					Editering
+					Dynaiskt
+					
+				Att lösa:
+					Flera system
+					Bookmarks
+					Tabeller med larm, inställningar, mätvärden
+					Klicka upp utförligare info
+					Hämta eller ta emot info kring vad som är aktivt
+					Redigera sidor
+					Export PDF
+					
+				
 			*/
 			var undercentral = {};
 			var AI_Controller = {};
@@ -193,15 +210,15 @@
 					//undercentral.yaml
 					
 					if (undercentral.yaml.cabinet != undefined)
-						undercentral.text = undercentral.text.replace("{{cabinet}}", undercentral.yaml.cabinet);
+						undercentral.text = undercentral.text.replace("#cabinet", undercentral.yaml.cabinet);
 					if (undercentral.yaml.positioned != undefined)
-						undercentral.text = undercentral.text.replace("{{positioned}}", undercentral.yaml.positioned);
+						undercentral.text = undercentral.text.replace("#positioned", undercentral.yaml.positioned);
 					if (undercentral.yaml.systems[0].components.forwardtemp != undefined)
-						undercentral.text = undercentral.text.replace("{{forwardtemp}}", undercentral.yaml.systems[0].components.forwardtemp);
+						undercentral.text = undercentral.text.replace("#forwardtemp", undercentral.yaml.systems[0].components.forwardtemp);
 					if (undercentral.yaml.systems[0].components.returntemp != undefined)
-						undercentral.text = undercentral.text.replace("{{returntemp}}", undercentral.yaml.systems[0].components.returntemp);
+						undercentral.text = undercentral.text.replace("#returntemp", undercentral.yaml.systems[0].components.returntemp);
 					if (undercentral.yaml.systems[0].components.pump != undefined)
-						undercentral.text = undercentral.text.replace("{{pump}}", undercentral.yaml.systems[0].components.pump);
+						undercentral.text = undercentral.text.replace("#pump", undercentral.yaml.systems[0].components.pump);
 					
 					//console.log(undercentral.text);
 					

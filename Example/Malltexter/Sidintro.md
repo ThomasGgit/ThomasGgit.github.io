@@ -1,3 +1,3 @@
 ### Allmänt
-Apparatskåp: {{cabinet}}
-Placering: {{positioned}}
+Apparatskåp: #cabinet
+Placering: #positioned
