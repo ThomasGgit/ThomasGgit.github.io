@@ -209,15 +209,15 @@
 						console.log(text[i]);
 						
 						if (undercentral.yaml.cabinet != undefined)
-							text[i] = text[i].replace("#cabinet", undercentral.yaml.cabinet);
+							text[i] = text[i].replace(/#cabinet/g, undercentral.yaml.cabinet);
 						if (undercentral.yaml.positioned != undefined)
-							text[i] = text[i].replace("#positioned", undercentral.yaml.positioned);
+							text[i] = text[i].replace(/#positioned/g, undercentral.yaml.positioned);
 						if (undercentral.yaml.systems[0].components.forwardtemp != undefined)
-							text[i] = text[i].replace("#forwardtemp", undercentral.yaml.systems[0].components.forwardtemp);
+							text[i] = text[i].replace(/#forwardtemp/g, undercentral.yaml.systems[0].components.forwardtemp);
 						if (undercentral.yaml.systems[0].components.returntemp != undefined)
-							text[i] = text[i].replace("#returntemp", undercentral.yaml.systems[0].components.returntemp);
+							text[i] = text[i].replace(/#returntemp/g, undercentral.yaml.systems[0].components.returntemp);
 						if (undercentral.yaml.systems[0].components.pump != undefined)
-							text[i] = text[i].replace("#pump", undercentral.yaml.systems[0].components.pump);
+							text[i] = text[i].replace(/#pump/g, undercentral.yaml.systems[0].components.pump);
 						
 						//console.log("hej2");
 						undercentral.text += text[i];
