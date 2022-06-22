@@ -111,7 +111,7 @@
 					//console.log(data);
 					
 					undercentral.raw = data;
-					var test = data.split("%%");
+					var test = data.split("---");
 					
 					undercentral.yaml = test[1].trim();
 					undercentral.text = test[2].trim();
@@ -208,6 +208,13 @@
 					//console.log(undercentral.text);
 					
 					//undercentral.yaml
+					
+					
+					while (var test1 = undercentral.text.indexOf("#system-") > 0) {
+						console.log(test1);
+					}
+					
+					
 					
 					if (undercentral.yaml.cabinet != undefined)
 						undercentral.text = undercentral.text.replace("#cabinet", undercentral.yaml.cabinet);
