@@ -92,7 +92,11 @@
 					Hämta eller ta emot info kring vad som är aktivt
 					Redigera sidor
 					Export PDF
+					SVG
 					
+				Framtida:
+					Klicka på symbol så highlightas den i texten
+					Sidhuvud och sidfot i export
 				
 			*/
 			var undercentral = {};
@@ -212,6 +216,7 @@
 							text[i] = text[i].replace(/#cabinet/g, undercentral.yaml.cabinet);
 						if (undercentral.yaml.positioned != undefined)
 							text[i] = text[i].replace(/#positioned/g, undercentral.yaml.positioned);
+							
 						if (undercentral.yaml.systems[0].components.forwardtemp != undefined)
 							text[i] = text[i].replace(/#forwardtemp/g, undercentral.yaml.systems[0].components.forwardtemp);
 						if (undercentral.yaml.systems[0].components.returntemp != undefined)

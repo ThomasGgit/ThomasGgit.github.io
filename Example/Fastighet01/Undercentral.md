@@ -1,4 +1,3 @@
-1
 ---
 cabinet: AS01
 positioned: Plan 4
