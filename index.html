@@ -232,18 +232,28 @@
 						if (undercentral.yaml.positioned != undefined)
 							text[i] = text[i].replace(/#positioned/gi, undercentral.yaml.positioned);
 						
+						var systemName;
 						text[i] = text[i].replace(/#system-[A-Ö,0-9]+\s/i, function (x){
-							var systemName = x.replace("#system-", "");
+							systemName = x.replace("#system-", "");
 							console.log(systemName);
 							return "## System " + systemName;
 						});
 						
-						if (undercentral.yaml.systems[0].components.forwardtemp != undefined)
-							text[i] = text[i].replace(/#forwardtemp/g, undercentral.yaml.systems[0].components.forwardtemp);
-						if (undercentral.yaml.systems[0].components.returntemp != undefined)
-							text[i] = text[i].replace(/#returntemp/g, undercentral.yaml.systems[0].components.returntemp);
-						if (undercentral.yaml.systems[0].components.pump != undefined)
-							text[i] = text[i].replace(/#pump/g, undercentral.yaml.systems[0].components.pump);
+						if (systemName == undefined) {						
+							var yaml2;
+							for (var j=0;j<undercentral.yaml.systems.length; j++) {
+								if (undercentral.yaml.systems[j].name == systemName)
+									yaml2 = undercentral.yaml.systems[j];
+							}
+							if (yaml2 != undefined) {							
+								if (yaml2.components.forwardtemp != undefined)
+									text[i] = text[i].replace(/#forwardtemp/g, undercentral.yaml.systems[0].components.forwardtemp);
+								if (yaml2.components.returntemp != undefined)
+									text[i] = text[i].replace(/#returntemp/g, undercentral.yaml.systems[0].components.returntemp);
+								if (yaml2.components.pump != undefined)
+									text[i] = text[i].replace(/#pump/g, undercentral.yaml.systems[0].components.pump);
+							}
+						}
 						
 						//console.log("hej2");
 						undercentral.text += text[i];
