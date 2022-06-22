@@ -209,11 +209,16 @@
 					
 					//undercentral.yaml
 					
-					
-					while (var test1 = undercentral.text.indexOf("#system-") > 0) {
+					var test1Old = 0;
+					var test1 = undercentral.text.indexOf("#system-", test1+1);
+					var text = [];
+					while (test1 > 0) {
 						console.log(test1);
+						text.push(undercentral.text.subString(test1Old, test1));
+						
+						test1 = undercentral.text.indexOf("#system-", test1+1);
 					}
-					
+					console.log(text);
 					
 					
 					if (undercentral.yaml.cabinet != undefined)
