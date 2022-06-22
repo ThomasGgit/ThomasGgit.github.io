@@ -140,7 +140,7 @@
 					//undercentral.yaml = YAML.eval(test[1].trim());
 					undercentral.yaml = YAML.parse(test[1].trim());
 					
-					//console.log(undercentral);
+					console.log(undercentral);
 					labb1();
 				});
 				
@@ -240,10 +240,11 @@
 						console.log(systemName);
 						
 						if (systemName != undefined) {
-							console.log("Hej3");
 							var yaml2;
 							for (var j=0;j<undercentral.yaml.systems.length; j++) {
 								console.log("Hej4");
+								console.log(undercentral.yaml.systems[j].name);
+								
 								if (undercentral.yaml.systems[j].name == systemName) {
 									console.log("Hej5");
 									yaml2 = undercentral.yaml.systems[j];
