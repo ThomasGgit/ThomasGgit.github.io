@@ -116,14 +116,12 @@
 					undercentral.yaml = test[1].trim();
 					undercentral.text = test[2].trim();
 					
-					
-					
-					console.log(undercentral);
+					//console.log(undercentral);
 					
 					//undercentral.yaml = YAML.eval(test[1].trim());
 					undercentral.yaml = YAML.parse(test[1].trim());
 					
-					console.log(undercentral);
+					//console.log(undercentral);
 					labb1();
 				});
 				
@@ -134,7 +132,7 @@
 					AI_Controller.yaml = null;
 					AI_Controller.text = data;
 					
-					console.log(AI_Controller);
+					//console.log(AI_Controller);
 					labb1();
 				});
 				
@@ -145,7 +143,7 @@
 					Framledningsreglering.yaml = null;
 					Framledningsreglering.text = data;
 					
-					console.log(Framledningsreglering);
+					//console.log(Framledningsreglering);
 					labb1();
 				});
 				
@@ -156,7 +154,7 @@
 					Pumpstart.yaml = null;
 					Pumpstart.text = data;
 					
-					console.log(Pumpstart);
+					//console.log(Pumpstart);
 					labb1();
 				});
 				
@@ -167,28 +165,10 @@
 					Sidintro.yaml = null;
 					Sidintro.text = data;
 					
-					console.log(Sidintro);
+					//console.log(Sidintro);
 					labb1();
 				});
 				
-				
-				/*el.load("/Example/Fastighet01/Undercentral.md", function(responseTxt, statusTxt, xhr) {
-					
-					//console.log(responseTxt);
-					stackedit.openFile({
-						content: { text: responseTxt }
-					}, true);
-					
-				});*/
-				
-				/*// Open the iframe
-				stackedit.openFile({
-					name: 'test.md', // with an optional filename
-					//content: { text: 'Hello **Markdown** writer!' }
-					content: { text: el.text() }
-				}, true);
-*/
-				// Listen to StackEdit events and apply the changes to the textarea.
 				
 			});
 			
