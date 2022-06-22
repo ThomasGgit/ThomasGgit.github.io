@@ -16,9 +16,19 @@ systems:
       forwardtemp: GT102
       returntemp: GT402
       pump: CP102
+	  
+  - name: VV01
+    components:
+      meter: PV603
+      forwardtemp: GT103
+      returntemp: GT403
+      pump: CP103
 ---
 ![[Sidintro]]
 #system-FJV
+![[Pumpstart]]
+![[Framledningsreglering]]
+#system-VV01
 ![[Pumpstart]]
 ![[Framledningsreglering]]
 #system-VS01
