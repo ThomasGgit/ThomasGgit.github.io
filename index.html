@@ -123,7 +123,7 @@
 			const stackedit = new Stackedit();
 			
 			$(document).ready(function(){
-				console.log('Version 0.0.0.24');
+				console.log('Version 0.0.0.25');
 				
 				
 				$.get( "/Example/Fastighet01/Undercentral.md", function( data ) {
@@ -239,13 +239,18 @@
 						});
 						console.log(systemName);
 						
-						if (systemName != undefined) {						
+						if (systemName != undefined) {
+							console.log("Hej3");
 							var yaml2;
 							for (var j=0;j<undercentral.yaml.systems.length; j++) {
-								if (undercentral.yaml.systems[j].name == systemName)
+								console.log("Hej4");
+								if (undercentral.yaml.systems[j].name == systemName) {
+									console.log("Hej5");
 									yaml2 = undercentral.yaml.systems[j];
+								}
 							}
-							if (yaml2 != undefined) {							
+							if (yaml2 != undefined) {
+								console.log("Hej6");
 								if (yaml2.components.forwardtemp != undefined)
 									text[i] = text[i].replace(/#forwardtemp/g, yaml2.components.forwardtemp);
 								if (yaml2.components.returntemp != undefined)
