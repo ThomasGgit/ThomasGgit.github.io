@@ -234,7 +234,7 @@
 						
 						var systemName;
 						text[i] = text[i].replace(/#system-[A-Ö,0-9]+\s/i, function (x){
-							systemName = x.replace("#system-", "");
+							systemName = x.replace("#system-", "").trim();
 							return "## System " + systemName;
 						});
 						console.log(systemName);
@@ -244,9 +244,9 @@
 							for (var j=0;j<undercentral.yaml.systems.length; j++) {
 								console.log("Hej4");
 								console.log(undercentral.yaml.systems[j].name);
-								console.log((undercentral.yaml.systems[j].name === systemName));
+								console.log((undercentral.yaml.systems[j].name.trim() === systemName));
 								
-								if (undercentral.yaml.systems[j].name === systemName) {
+								if (undercentral.yaml.systems[j].name.trim() === systemName) {
 									console.log("Hej5");
 									yaml2 = undercentral.yaml.systems[j];
 								}
