@@ -220,6 +220,7 @@
 						text[i] = text[i].replace(/#system-[A-Ö,0-9]+\s/i, function (x){
 							var systemName = x.replace("#system-", "");
 							console.log(systemName);
+							return "## System " + systemName;
 						});
 						
 						if (undercentral.yaml.systems[0].components.forwardtemp != undefined)
