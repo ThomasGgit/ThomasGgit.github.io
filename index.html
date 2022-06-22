@@ -235,11 +235,11 @@
 						var systemName;
 						text[i] = text[i].replace(/#system-[A-Ö,0-9]+\s/i, function (x){
 							systemName = x.replace("#system-", "");
-							console.log(systemName);
 							return "## System " + systemName;
 						});
+						console.log(systemName);
 						
-						if (systemName == undefined) {						
+						if (systemName != undefined) {						
 							var yaml2;
 							for (var j=0;j<undercentral.yaml.systems.length; j++) {
 								if (undercentral.yaml.systems[j].name == systemName)
