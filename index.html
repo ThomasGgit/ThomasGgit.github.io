@@ -216,22 +216,27 @@
 						console.log(test1);
 						text.push(undercentral.text.subString(test1Old, test1));
 						
+						
+						test1Old = test1;
 						test1 = undercentral.text.indexOf("#system-", test1+1);
 					}
 					console.log(text);
 					
-					
-					if (undercentral.yaml.cabinet != undefined)
-						undercentral.text = undercentral.text.replace("#cabinet", undercentral.yaml.cabinet);
-					if (undercentral.yaml.positioned != undefined)
-						undercentral.text = undercentral.text.replace("#positioned", undercentral.yaml.positioned);
-					if (undercentral.yaml.systems[0].components.forwardtemp != undefined)
-						undercentral.text = undercentral.text.replace("#forwardtemp", undercentral.yaml.systems[0].components.forwardtemp);
-					if (undercentral.yaml.systems[0].components.returntemp != undefined)
-						undercentral.text = undercentral.text.replace("#returntemp", undercentral.yaml.systems[0].components.returntemp);
-					if (undercentral.yaml.systems[0].components.pump != undefined)
-						undercentral.text = undercentral.text.replace("#pump", undercentral.yaml.systems[0].components.pump);
-					
+					undercentral.text = "";
+					for (var i=0;i<text.lenght; i++) {
+						if (undercentral.yaml.cabinet != undefined)
+							text[i] = text[i].replace("#cabinet", undercentral.yaml.cabinet);
+						if (undercentral.yaml.positioned != undefined)
+							text[i] = text[i].replace("#positioned", undercentral.yaml.positioned);
+						if (undercentral.yaml.systems[0].components.forwardtemp != undefined)
+							text[i] = text[i].replace("#forwardtemp", undercentral.yaml.systems[0].components.forwardtemp);
+						if (undercentral.yaml.systems[0].components.returntemp != undefined)
+							text[i] = text[i].replace("#returntemp", undercentral.yaml.systems[0].components.returntemp);
+						if (undercentral.yaml.systems[0].components.pump != undefined)
+							text[i] = text[i].replace("#pump", undercentral.yaml.systems[0].components.pump);
+						
+						undercentral.text += text[i];
+					}
 					//console.log(undercentral.text);
 					
 					stackedit.openFile({
