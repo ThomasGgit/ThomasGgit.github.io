@@ -213,10 +213,15 @@
 						console.log(text[i]);
 						
 						if (undercentral.yaml.cabinet != undefined)
-							text[i] = text[i].replace(/#cabinet/g, undercentral.yaml.cabinet);
+							text[i] = text[i].replace(/#cabinet/gi, undercentral.yaml.cabinet);
 						if (undercentral.yaml.positioned != undefined)
-							text[i] = text[i].replace(/#positioned/g, undercentral.yaml.positioned);
-							
+							text[i] = text[i].replace(/#positioned/gi, undercentral.yaml.positioned);
+						
+						text[i] = text[i].replace(/#system-[A-Ö,0-9]+\s/i, function (x){
+							var systemName = x.replace("#system-", "");
+							console.log(systemName);
+						});
+						
 						if (undercentral.yaml.systems[0].components.forwardtemp != undefined)
 							text[i] = text[i].replace(/#forwardtemp/g, undercentral.yaml.systems[0].components.forwardtemp);
 						if (undercentral.yaml.systems[0].components.returntemp != undefined)
