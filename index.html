@@ -202,7 +202,11 @@
 					console.log(text);
 					
 					undercentral.text = "";
-					for (var i=0;i<text.lenght; i++) {
+					for (var i=0;i<text.length; i++) {
+						console.log("hej1");
+					
+						console.log(text[i]);
+						
 						if (undercentral.yaml.cabinet != undefined)
 							text[i] = text[i].replace("#cabinet", undercentral.yaml.cabinet);
 						if (undercentral.yaml.positioned != undefined)
@@ -214,9 +218,11 @@
 						if (undercentral.yaml.systems[0].components.pump != undefined)
 							text[i] = text[i].replace("#pump", undercentral.yaml.systems[0].components.pump);
 						
+						console.log("hej2");
 						undercentral.text += text[i];
+						console.log("hej3");
 					}
-					//console.log(undercentral.text);
+					console.log(undercentral.text);
 					
 					stackedit.openFile({
 						content: { text: undercentral.text }
