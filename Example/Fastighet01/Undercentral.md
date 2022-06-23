@@ -24,10 +24,11 @@ systems:
       returntemp: GT403
       pump: CP103
 ---
-![[Undercentral.svg]]
+![](./Example/Fastighet01/Undercentral.svg)
+![](/Example/Fastighet01/Undercentral.svg)
+![](Undercentral.svg)
 ![[Sidintro]]
 #system-FJV
-![[Pumpstart]]
 ![[Framledningsreglering]]
 #system-VV01
 ![[Pumpstart]]
