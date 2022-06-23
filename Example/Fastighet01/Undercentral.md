@@ -24,6 +24,7 @@ systems:
       returntemp: GT403
       pump: CP103
 ---
+![](https://thomasggit.github.io/Example/Fastighet01/Undercentral.svg)
 ![](./Example/Fastighet01/Undercentral.svg)
 ![](/Example/Fastighet01/Undercentral.svg)
 ![](Undercentral.svg)
