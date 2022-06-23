@@ -5,7 +5,7 @@ Nullam orci velit, finibus eu tortor non, porttitor imperdiet nisl. Curabitur ut
 
 #### Table
 Objekt|Enhet|Inställning|Larmprioritet|Beskrivning
-------|------|------|------
+------|------|------|------|------
 #forwardtemp|°C|||Framledningstemperatur
 #forwardtemp|||A|Givarfel
 #forwardtemp||10°C||Börvärde
