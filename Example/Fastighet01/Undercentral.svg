@@ -153,18 +153,18 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.00392157"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.7071068"
-     inkscape:cx="820.95095"
-     inkscape:cy="449.01279"
+     inkscape:zoom="0.70710682"
+     inkscape:cx="724.78441"
+     inkscape:cy="400.92952"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="true"
      units="px"
-     inkscape:window-width="2504"
-     inkscape:window-height="1153"
-     inkscape:window-x="156"
-     inkscape:window-y="156"
-     inkscape:window-maximized="0"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
      inkscape:snap-object-midpoints="true"
      inkscape:snap-center="true"
      inkscape:snap-bbox="true"
@@ -203,6 +203,85 @@
      inkscape:groupmode="layer"
      id="layer1"
      transform="translate(0,-46.439567)">
+    <g
+       id="g17351">
+      <g
+         style="display:inline"
+         id="g3019"
+         transform="matrix(0.26458333,0,0,0.26458333,-168.52599,100.66044)">
+        <path
+           id="path3314"
+           d="m 1648.8934,77.885684 c -1.3,-2.2 -2.5,-4.2 -2.5,-4.3 l -0.1,-0.1 0.5,-0.3 c 1.1,-0.6 2.2,-0.9 3.4,-1 0.6,-0.1 2.1,-0.1 2.7,0 0.6,0.1 1.4,0.3 1.9,0.5 0.6,0.3 1.5,0.7 1.5,0.8 0,0 -4.7,8.100004 -4.9,8.400004 l -0.1,0.2 z"
+           class="ind"
+           inkscape:connector-curvature="0"
+           style="fill:#ffffff" />
+        <path
+           id="path3316"
+           d="m 1646.2934,73.885684 5,8.500004 5,-8.500004 c 0.1,-0.3 0,-0.6 -0.3,-0.8 -3,-1.6 -6.5,-1.6 -9.5,0 -0.3,0.2 -0.4,0.5 -0.2,0.8 z"
+           stroke-miterlimit="10"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#8e8e8e;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+        <line
+           id="line3318"
+           y2="91.985687"
+           x2="1651.2935"
+           y1="82.085693"
+           x1="1651.2935"
+           stroke-miterlimit="10"
+           style="fill:none;stroke:#8e8e8e;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+      </g>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:4.23333px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="268.32019"
+         y="118.60192"
+         id="text3485-2"><tspan
+           sodipodi:role="line"
+           id="tspan3483-3"
+           x="268.32019"
+           y="118.60192"
+           style="font-size:4.23333px;text-align:center;text-anchor:middle;stroke-width:0.264583px">VV01-GT11</tspan></text>
+    </g>
+    <g
+       id="g17351-1"
+       transform="translate(-134.55257,-39.6775)">
+      <g
+         style="display:inline"
+         id="g3019-86"
+         transform="matrix(0.26458333,0,0,0.26458333,-168.52599,100.66044)">
+        <path
+           id="path3314-4"
+           d="m 1648.8934,77.885684 c -1.3,-2.2 -2.5,-4.2 -2.5,-4.3 l -0.1,-0.1 0.5,-0.3 c 1.1,-0.6 2.2,-0.9 3.4,-1 0.6,-0.1 2.1,-0.1 2.7,0 0.6,0.1 1.4,0.3 1.9,0.5 0.6,0.3 1.5,0.7 1.5,0.8 0,0 -4.7,8.100004 -4.9,8.400004 l -0.1,0.2 z"
+           class="ind"
+           inkscape:connector-curvature="0"
+           style="fill:#ffffff" />
+        <path
+           id="path3316-6"
+           d="m 1646.2934,73.885684 5,8.500004 5,-8.500004 c 0.1,-0.3 0,-0.6 -0.3,-0.8 -3,-1.6 -6.5,-1.6 -9.5,0 -0.3,0.2 -0.4,0.5 -0.2,0.8 z"
+           stroke-miterlimit="10"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#8e8e8e;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+        <line
+           id="line3318-3"
+           y2="91.985687"
+           x2="1651.2935"
+           y1="82.085693"
+           x1="1651.2935"
+           stroke-miterlimit="10"
+           style="fill:none;stroke:#8e8e8e;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+      </g>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:4.23333px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="268.32019"
+         y="118.60192"
+         id="text3485-2-7"><tspan
+           sodipodi:role="line"
+           id="tspan3483-3-9"
+           x="268.32019"
+           y="118.60192"
+           style="font-size:4.23333px;text-align:center;text-anchor:middle;stroke-width:0.264583px">KV01-GT41</tspan></text>
+    </g>
     <rect
        id="rect112"
        pointer-events="none"
@@ -367,6 +446,49 @@
        id="path1920"
        d="m 164.47019,125.33905 168.53981,-0.01"
        style="fill:none;stroke:#ff0000;stroke-width:1.32292;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <g
+       id="g986">
+      <g
+         id="g17368"
+         transform="translate(-16.755402,-7.4023102)">
+        <g
+           style="display:inline"
+           id="g3019-8"
+           transform="matrix(0.26458333,0,0,0.26458333,-151.7706,119.97899)">
+          <path
+             id="path3314-2"
+             d="m 1648.8934,77.885684 c -1.3,-2.2 -2.5,-4.2 -2.5,-4.3 l -0.1,-0.1 0.5,-0.3 c 1.1,-0.6 2.2,-0.9 3.4,-1 0.6,-0.1 2.1,-0.1 2.7,0 0.6,0.1 1.4,0.3 1.9,0.5 0.6,0.3 1.5,0.7 1.5,0.8 0,0 -4.7,8.100004 -4.9,8.400004 l -0.1,0.2 z"
+             class="ind"
+             inkscape:connector-curvature="0"
+             style="fill:#ffffff" />
+          <path
+             id="path3316-0"
+             d="m 1646.2934,73.885684 5,8.500004 5,-8.500004 c 0.1,-0.3 0,-0.6 -0.3,-0.8 -3,-1.6 -6.5,-1.6 -9.5,0 -0.3,0.2 -0.4,0.5 -0.2,0.8 z"
+             stroke-miterlimit="10"
+             inkscape:connector-curvature="0"
+             style="fill:none;stroke:#8e8e8e;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+          <line
+             id="line3318-8"
+             y2="91.985687"
+             x2="1651.2935"
+             y1="82.085693"
+             x1="1651.2935"
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#8e8e8e;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+        </g>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:4.23333px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           x="285.07559"
+           y="137.92047"
+           id="text3485-2-0"><tspan
+             sodipodi:role="line"
+             id="tspan3483-3-2"
+             x="285.07559"
+             y="137.92047"
+             style="font-size:4.23333px;text-align:center;text-anchor:middle;stroke-width:0.264583px">VV01-GT41</tspan></text>
+      </g>
+    </g>
     <path
        inkscape:connector-curvature="0"
        id="path1920-3"
@@ -407,11 +529,95 @@
        id="path1920-35-0-3-0-5"
        d="m 86.2813,221.90194 58.87403,-0.01"
        style="fill:none;stroke:#ff00ff;stroke-width:1.32292;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <g
+       id="g17351-4"
+       transform="translate(0,72.76145)">
+      <g
+         style="display:inline"
+         id="g3019-6"
+         transform="matrix(0.26458333,0,0,0.26458333,-168.52599,100.66044)">
+        <path
+           id="path3314-3"
+           d="m 1648.8934,77.885684 c -1.3,-2.2 -2.5,-4.2 -2.5,-4.3 l -0.1,-0.1 0.5,-0.3 c 1.1,-0.6 2.2,-0.9 3.4,-1 0.6,-0.1 2.1,-0.1 2.7,0 0.6,0.1 1.4,0.3 1.9,0.5 0.6,0.3 1.5,0.7 1.5,0.8 0,0 -4.7,8.100004 -4.9,8.400004 l -0.1,0.2 z"
+           class="ind"
+           inkscape:connector-curvature="0"
+           style="fill:#ffffff" />
+        <path
+           id="path3316-2"
+           d="m 1646.2934,73.885684 5,8.500004 5,-8.500004 c 0.1,-0.3 0,-0.6 -0.3,-0.8 -3,-1.6 -6.5,-1.6 -9.5,0 -0.3,0.2 -0.4,0.5 -0.2,0.8 z"
+           stroke-miterlimit="10"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#8e8e8e;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+        <line
+           id="line3318-5"
+           y2="91.985687"
+           x2="1651.2935"
+           y1="82.085693"
+           x1="1651.2935"
+           stroke-miterlimit="10"
+           style="fill:none;stroke:#8e8e8e;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+      </g>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:4.23333px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="268.32019"
+         y="118.60192"
+         id="text3485-2-3"><tspan
+           sodipodi:role="line"
+           id="tspan3483-3-4"
+           x="268.32019"
+           y="118.60192"
+           style="font-size:4.23333px;text-align:center;text-anchor:middle;stroke-width:0.264583px">VS01-GT11</tspan></text>
+    </g>
     <path
        inkscape:connector-curvature="0"
        id="path1920-9"
        d="m 164.49802,198.09944 168.512,-0.01"
        style="fill:none;stroke:#ff9900;stroke-width:1.3208;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <g
+       id="g986-1"
+       transform="translate(-1.3659473e-7,84.66165)">
+      <g
+         id="g17368-6"
+         transform="translate(-16.755402,-7.4023102)">
+        <g
+           style="display:inline"
+           id="g3019-8-3"
+           transform="matrix(0.26458333,0,0,0.26458333,-151.7706,119.97899)">
+          <path
+             id="path3314-2-4"
+             d="m 1648.8934,77.885684 c -1.3,-2.2 -2.5,-4.2 -2.5,-4.3 l -0.1,-0.1 0.5,-0.3 c 1.1,-0.6 2.2,-0.9 3.4,-1 0.6,-0.1 2.1,-0.1 2.7,0 0.6,0.1 1.4,0.3 1.9,0.5 0.6,0.3 1.5,0.7 1.5,0.8 0,0 -4.7,8.100004 -4.9,8.400004 l -0.1,0.2 z"
+             class="ind"
+             inkscape:connector-curvature="0"
+             style="fill:#ffffff" />
+          <path
+             id="path3316-0-4"
+             d="m 1646.2934,73.885684 5,8.500004 5,-8.500004 c 0.1,-0.3 0,-0.6 -0.3,-0.8 -3,-1.6 -6.5,-1.6 -9.5,0 -0.3,0.2 -0.4,0.5 -0.2,0.8 z"
+             stroke-miterlimit="10"
+             inkscape:connector-curvature="0"
+             style="fill:none;stroke:#8e8e8e;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+          <line
+             id="line3318-8-3"
+             y2="91.985687"
+             x2="1651.2935"
+             y1="82.085693"
+             x1="1651.2935"
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#8e8e8e;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+        </g>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:4.23333px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           x="285.07559"
+           y="137.92047"
+           id="text3485-2-0-3"><tspan
+             sodipodi:role="line"
+             id="tspan3483-3-2-2"
+             x="285.07559"
+             y="137.92047"
+             style="font-size:4.23333px;text-align:center;text-anchor:middle;stroke-width:0.264583px">VS01-GT41</tspan></text>
+      </g>
+    </g>
     <path
        inkscape:connector-curvature="0"
        id="path1920-9-0"
@@ -718,5 +924,189 @@
        pointer-events="none"
        stroke-miterlimit="10"
        d="m 342.34234,222.4216 h -3.22482 v 0.90605 l -3.15569,-1.4157 3.15569,-1.41569 v 0.90604 h 3.22482 v 0.50965 z" />
+    <g
+       id="g17360">
+      <g
+         style="display:inline"
+         id="g2978"
+         transform="matrix(-0.26458333,0,0,0.26458333,649.61176,87.763453)">
+        <path
+           id="path3260"
+           d="m 1660.1754,177.11797 c -5.5,0 -9.9,4.4 -9.9,9.9 0,5.5 4.4,9.9 9.9,9.9 5.5,0 9.9,-4.4 9.9,-9.9 0,-5.5 -4.4,-9.9 -9.9,-9.9"
+           class="ind_al"
+           inkscape:connector-curvature="0"
+           style="fill:#dddddc" />
+        <path
+           id="path3262"
+           d="m 1660.4754,192.21797 v -10.2 l 8.3,5 z"
+           class="ind_on"
+           inkscape:connector-curvature="0"
+           style="fill:#ffffff" />
+        <path
+           id="path3266"
+           d="m 1660.1754,177.11797 c -5.5,0 -9.9,4.4 -9.9,9.9 0,5.5 4.4,9.9 9.9,9.9 5.5,0 9.9,-4.4 9.9,-9.9 0,-5.5 -4.4,-9.9 -9.9,-9.9"
+           stroke-miterlimit="10"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#8e8e8e;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+        <path
+           id="path3264"
+           d="m 1660.9754,192.21797 v -10.2 l 8.3,5 z"
+           stroke-miterlimit="10"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#757575;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+      </g>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:4.23333px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="210.30844"
+         y="133.54691"
+         id="text3485"><tspan
+           sodipodi:role="line"
+           id="tspan3483"
+           x="210.30844"
+           y="133.54691"
+           style="font-size:4.23333px;text-align:center;text-anchor:middle;stroke-width:0.264583px">VV01-CP01</tspan></text>
+    </g>
+    <g
+       id="g17360-7"
+       transform="translate(0,60.858873)">
+      <g
+         style="display:inline"
+         id="g2978-5"
+         transform="matrix(0.26458333,0,0,0.26458333,-228.89771,87.763453)">
+        <path
+           id="path3260-9"
+           d="m 1660.1754,177.11797 c -5.5,0 -9.9,4.4 -9.9,9.9 0,5.5 4.4,9.9 9.9,9.9 5.5,0 9.9,-4.4 9.9,-9.9 0,-5.5 -4.4,-9.9 -9.9,-9.9"
+           class="ind_al"
+           inkscape:connector-curvature="0"
+           style="fill:#dddddc" />
+        <path
+           id="path3262-4"
+           d="m 1660.4754,192.21797 v -10.2 l 8.3,5 z"
+           class="ind_on"
+           inkscape:connector-curvature="0"
+           style="fill:#ffffff" />
+        <path
+           id="path3266-7"
+           d="m 1660.1754,177.11797 c -5.5,0 -9.9,4.4 -9.9,9.9 0,5.5 4.4,9.9 9.9,9.9 5.5,0 9.9,-4.4 9.9,-9.9 0,-5.5 -4.4,-9.9 -9.9,-9.9"
+           stroke-miterlimit="10"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#8e8e8e;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+        <path
+           id="path3264-1"
+           d="m 1660.9754,192.21797 v -10.2 l 8.3,5 z"
+           stroke-miterlimit="10"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#757575;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+      </g>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:4.23333px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="210.30844"
+         y="133.54691"
+         id="text3485-9"><tspan
+           sodipodi:role="line"
+           id="tspan3483-4"
+           x="210.30844"
+           y="133.54691"
+           style="font-size:4.23333px;text-align:center;text-anchor:middle;stroke-width:0.264583px">VS01-CP01</tspan></text>
+    </g>
+    <g
+       id="g1044">
+      <g
+         style="display:inline"
+         id="g3184"
+         transform="matrix(0.26458333,0,0,0.26458333,-389.63155,99.059256)">
+        <path
+           d="m 1950.2732,194.74987 v -10.8 l 16.5,10.7 v -10.7 z"
+           id="path2"
+           inkscape:connector-curvature="0"
+           style="fill:#dddddc" />
+        <path
+           style="fill:#ffffff"
+           d="m 1958.4732,169.54987 c -3,0 -5.4,2.6 -5.4,5.6 0,3 2.4,5.4 5.4,5.4 3,0 5.4,-2.4 5.4,-5.4 0,-3 -2.4,-5.6 -5.4,-5.6"
+           class="ind"
+           id="path4"
+           inkscape:connector-curvature="0" />
+        <path
+           stroke-miterlimit="10"
+           d="m 1958.4732,169.34987 c -3,0 -5.4,2.6 -5.4,5.6 0,3 2.4,5.4 5.4,5.4 3,0 5.4,-2.4 5.4,-5.4 0,-3 -2.4,-5.6 -5.4,-5.6"
+           id="path6"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#8e8e8e;stroke-width:1.5;stroke-miterlimit:10" />
+        <path
+           stroke-miterlimit="10"
+           d="m 1958.4732,188.54987 v -8.1"
+           id="path8"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#8e8e8e;stroke-width:1.5;stroke-miterlimit:10" />
+        <path
+           stroke-miterlimit="10"
+           d="m 1950.3732,194.74987 v -10.8 l 16.5,10.7 v -10.7 z"
+           id="path10"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#8e8e8e;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+      </g>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:4.23333px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="128.53996"
+         y="142.7874"
+         id="text3485-5"><tspan
+           sodipodi:role="line"
+           id="tspan3483-41"
+           x="128.53996"
+           y="142.7874"
+           style="font-size:4.23333px;text-align:center;text-anchor:middle;stroke-width:0.264583px">VV01-SV11</tspan></text>
+    </g>
+    <g
+       id="g1044-3"
+       transform="translate(0,72.79144)">
+      <g
+         style="display:inline"
+         id="g3184-4"
+         transform="matrix(0.26458333,0,0,0.26458333,-389.63155,99.059256)">
+        <path
+           d="m 1950.2732,194.74987 v -10.8 l 16.5,10.7 v -10.7 z"
+           id="path2-6"
+           inkscape:connector-curvature="0"
+           style="fill:#dddddc" />
+        <path
+           style="fill:#ffffff"
+           d="m 1958.4732,169.54987 c -3,0 -5.4,2.6 -5.4,5.6 0,3 2.4,5.4 5.4,5.4 3,0 5.4,-2.4 5.4,-5.4 0,-3 -2.4,-5.6 -5.4,-5.6"
+           class="ind"
+           id="path4-6"
+           inkscape:connector-curvature="0" />
+        <path
+           stroke-miterlimit="10"
+           d="m 1958.4732,169.34987 c -3,0 -5.4,2.6 -5.4,5.6 0,3 2.4,5.4 5.4,5.4 3,0 5.4,-2.4 5.4,-5.4 0,-3 -2.4,-5.6 -5.4,-5.6"
+           id="path6-4"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#8e8e8e;stroke-width:1.5;stroke-miterlimit:10" />
+        <path
+           stroke-miterlimit="10"
+           d="m 1958.4732,188.54987 v -8.1"
+           id="path8-5"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#8e8e8e;stroke-width:1.5;stroke-miterlimit:10" />
+        <path
+           stroke-miterlimit="10"
+           d="m 1950.3732,194.74987 v -10.8 l 16.5,10.7 v -10.7 z"
+           id="path10-6"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#8e8e8e;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+      </g>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:4.23333px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="128.53996"
+         y="142.7874"
+         id="text3485-5-6"><tspan
+           sodipodi:role="line"
+           id="tspan3483-41-9"
+           x="128.53996"
+           y="142.7874"
+           style="font-size:4.23333px;text-align:center;text-anchor:middle;stroke-width:0.264583px">VS01-SV11</tspan></text>
+    </g>
   </g>
 </svg>
