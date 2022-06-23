@@ -24,6 +24,7 @@ systems:
       returntemp: GT403
       pump: CP103
 ---
+![[Undercentral.svg]]
 ![[Sidintro]]
 #system-FJV
 ![[Pumpstart]]
