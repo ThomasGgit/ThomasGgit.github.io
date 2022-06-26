@@ -140,6 +140,14 @@
 						$(dropdownContent).hide();
 					}
 				});
+				$(".dropdown-btn").each(function() {
+					var dropdownContent = $(this).next();
+					if ($(this).hasClass("active")) {
+						$(dropdownContent).show();
+					} else {
+						$(dropdownContent).hide();
+					}
+				});
 			});
 		</script>
 
@@ -149,6 +157,7 @@
 
 		<div class="mainnav">
 			<!--<a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fa fa-times-circle" aria-hidden="true"></i></a>-->
+			<a href="./index.html">Start</a>
 			<button class="dropdown-btn">Driftkort<i class="fa fa-caret-down"></i></button>
 			<div class="dropdown-container">
 				<button class="dropdown-btn">Fastighet 01<i class="fa fa-caret-down"></i></button>
@@ -156,7 +165,7 @@
 					<a href="./Fastighet01/Undercentral.html">Undercentral</a>
 				</div>
 			</div>
-			<a href="#about">About</a>
+			<a href="#about">Om</a>
 		</div>
 		
 			
