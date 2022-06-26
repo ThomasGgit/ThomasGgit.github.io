@@ -30,11 +30,11 @@
 				background-color: #f1f1f1;
 				position: fixed;
 				height: 100%;
-				overflow: auto;
+				overflow: hidden;
 				transition: 0.5s;
 			}
 
-			.mainnav a, .dropdown-btn {
+			.mainnav a, .mainnav .dropdown-btn {
 				padding: 6px 0px 6px 16px;
 				text-decoration: none;
 				font-size: 20px;
@@ -53,7 +53,7 @@
 			  color: #04AA6D;
 			}
 
-			.mainnav a:hover:not(.active), .dropdown-btn:hover:not(.active) {
+			.mainnav a:hover:not(.active), .mainnav .dropdown-btn:hover:not(.active) {
 			  color: #000;
 			}
 			
@@ -94,7 +94,7 @@
 			}
 
 			@media screen and (max-width: 400px) {
-			  .mainnav a, .dropdown-btn {
+			  .mainnav a, .mainnav .dropdown-btn {
 				text-align: center;
 				float: none;
 			  }
