@@ -6,8 +6,9 @@
 
 		<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 		<script src="https://unpkg.com/stackedit-js@1.0.7/docs/lib/stackedit.min.js"></script>
-		<script type="text/javascript" src="yaml.js"></script>
+		<script type="text/javascript" src="/yaml.js"></script>
 
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 		
 		<style>
@@ -21,14 +22,70 @@
 			  height: auto;
 			}
 			
+			.mainnav {
+				margin: 0;
+				padding: 0;
+				width: 170px;
+				background-color: #f1f1f1;
+				position: fixed;
+				height: 100%;
+				overflow: auto;
+				transition: 0.5s;
+			}
+
+			.mainnav a, .dropdown-btn {
+				padding: 6px 0px 6px 16px;
+				text-decoration: none;
+				font-size: 20px;
+				color: #818181;
+				display: block;
+				border: none;
+				background: none;
+				width: 100%;
+				text-align: left;
+				cursor: pointer;
+				outline: none;
+				transition: 0.3s;
+			}
+			 
+			.mainnav .active {
+			  background-color: #04AA6D;
+			  color: white;
+			}
+
+			.mainnav a:hover:not(.active), .dropdown-btn:hover:not(.active) {
+			  color: #000;
+			}
+			
+			.mainnav .closebtn {
+				font-size: 24px;
+			}
+			.mainnav .fa-times-circle {
+			  float: right;
+			  padding-right: 28px;
+			}
+
+			/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+			.mainnav .dropdown-container {
+				display: none;
+				padding-left: 8px;
+			}
+			
+			/* Optional: Style the caret down icon */
+			.mainnav .fa-caret-down {
+			  float: right;
+			  padding-right: 8px;
+			}
+			
 			.sidebar {
-			  margin: 0;
-			  padding: 0;
-			  width: 150px;
-			  background-color: #f1f1f1;
-			  position: fixed;
-			  height: 100%;
-			  overflow: auto;
+				left: 170px;
+				margin: 0;
+				padding: 0;
+				width: 150px;
+				background-color: #f1f1f1;
+				position: fixed;
+				height: 100%;
+				overflow: auto;
 			}
 
 			.sidebar a {
@@ -55,17 +112,27 @@
 			}
 
 			@media screen and (max-width: 700px) {
+			  .mainnav {
+				width: 100%;
+				height: auto;
+				position: relative;
+			  }
 			  .sidebar {
 				width: 100%;
 				height: auto;
 				position: relative;
 			  }
 			  .sidebar a {float: left;}
+			  .mainnav a, .mainnav .dropdown-btn {float: left;}
 			  div.main {margin-left: 0;}
 			}
 
 			@media screen and (max-width: 400px) {
 			  .sidebar a {
+				text-align: center;
+				float: none;
+			  }
+			  .mainnav a, .dropdown-btn {
 				text-align: center;
 				float: none;
 			  }
@@ -144,6 +211,22 @@
 			
 			$(document).ready(function(){
 				console.log('Version 0.0.0.32');
+				
+				
+				
+				var dropdown = document.getElementsByClassName("dropdown-btn");
+				for (var i = 0; i < dropdown.length; i++) {
+					dropdown[i].addEventListener("click", function() {
+						this.classList.toggle("active");
+						var dropdownContent = this.nextElementSibling;
+						if (dropdownContent.style.display === "block") {
+							dropdownContent.style.display = "none";
+						} else {
+							dropdownContent.style.display = "block";
+						}
+					});
+				}
+				
 				
 				
 				$.get( "/Fastighet01/Undercentral.md", function( data ) {
@@ -299,7 +382,18 @@
 	</head>
 
 	<body>
-
+		<div class="mainnav">
+			<!--<a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fa fa-times-circle" aria-hidden="true"></i></a>-->
+			<button class="dropdown-btn">Driftkort<i class="fa fa-caret-down"></i></button>
+			<div class="dropdown-container">
+				<button class="dropdown-btn">Fastighet 01<i class="fa fa-caret-down"></i></button>
+				<div class="dropdown-container">
+					<a href="./Fastighet01/Undercentral.html">Undercentral</a>
+				</div>
+			</div>
+			<a href="#about">About</a>
+		</div>
+		
 		<div class="sidebar">
 			<a href="#">Home</a>
 			<a href="#system-fjv">FJV</a>
