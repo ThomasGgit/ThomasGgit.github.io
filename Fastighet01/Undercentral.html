@@ -236,15 +236,16 @@
 					//console.log(data);
 					
 					undercentral.raw = data;
-					var test = data.split("---");
-					
-					undercentral.yaml = test[1].trim();
-					undercentral.text = test[2].trim();
 					
 					//console.log(undercentral);
 					
-					//undercentral.yaml = YAML.eval(test[1].trim());
-					undercentral.yaml = YAML.parse(test[1].trim());
+					labb1();
+				});
+				
+				$.get( "/Fastighet01/Undercentral.yaml", function( data ) {
+					//console.log(data);
+					
+					undercentral.yaml = YAML.parse(data);
 					
 					console.log(undercentral);
 					labb1();
@@ -299,14 +300,14 @@
 			
 			var doneCount = 0;
 			function labb1 () {
-				if (++doneCount == 5){
+				if (++doneCount == 6){
 				
 					var el = $('#content');
 					
 					//console.log(undercentral.text);
 					
 					for (var i=0;i<10; i++) {
-						undercentral.text = undercentral.text.replace("![[AI_Controller]]", AI_Controller.text);
+						undercentral.text = undercentral.raw.replace("![[AI_Controller]]", AI_Controller.text);
 						undercentral.text = undercentral.text.replace("![[Framledningsreglering]]", Framledningsreglering.text);
 						undercentral.text = undercentral.text.replace("![[Pumpstart]]", Pumpstart.text);
 						undercentral.text = undercentral.text.replace("![[Sidintro]]", Sidintro.text);
