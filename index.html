@@ -21,162 +21,114 @@
 			  margin: 0;
 			  font-family: "Lato", sans-serif;
 			}
-			
-			.main img {
-			  width: 100%;
-			  height: auto;
-			}
-			
-			.mainnav {
-				border-right-style: groove;
-				border-width: 1px;
-				margin: 0;
-				padding: 0;
-				width: 170px;
-				background-color: #f1f1f1;
+			body {
+			  background: #f1f1f1;
+			  font-family: "Lato", sans-serif;
+			  &::before {
+				z-index: -1;
+				content: '';
 				position: fixed;
+				top: 0;
+				left: 0;
+				background: #44c4e7;
+				/* IE Fallback */
+				background: rgba(68,196,231, 0.8);
+				width: 100%;
 				height: 100%;
-				overflow: hidden;
-				transition: 0.5s;
+			  }
 			}
 
-			.mainnav a, .mainnav .dropdown-btn {
-				padding: 6px 0px 6px 16px;
-				text-decoration: none;
-				font-size: 20px;
-				color: #818181;
-				display: block;
-				border: none;
-				background: none;
-				width: 100%;
-				text-align: left;
-				cursor: pointer;
+			.form {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				background: #fff;
+				width: 285px;
+				margin: -140px 0 0 -182px;
+				padding: 40px;
+				box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+			}
+			.form h2 {
+				margin: 0 0 20px;
+				line-height: 1;
+				color: #04AA6D;
+				font-size: 18px;
+				font-weight: 400;
+			}
+			.form input {
 				outline: none;
-				transition: 0.3s;
-			}
-			 
-			.mainnav .active {
-			  color: #04AA6D;
-			}
-
-			.mainnav a:hover:not(.active), .mainnav .dropdown-btn:hover:not(.active) {
-			  color: #000;
-			}
-			
-			.mainnav .closebtn {
-				font-size: 24px;
-			}
-			.mainnav .fa-times-circle {
-			  float: right;
-			  padding-right: 28px;
-			}
-
-			/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
-			.mainnav .dropdown-container {
-				display: none;
-				padding-left: 8px;
-			}
-			
-			/* Optional: Style the caret down icon */
-			.mainnav .fa-caret-down {
-			  float: right;
-			  padding-right: 8px;
-			}
-
-			div.main {
-			  margin-left: 200px;
-			  padding: 1px 16px;
-			  height: 1000px;
-			}
-
-			@media screen and (max-width: 700px) {
-			  .mainnav {
+				display: block;
 				width: 100%;
-				height: auto;
-				position: relative;
-			  }
-			  .mainnav a, .mainnav .dropdown-btn {float: left;}
-			  div.main {margin-left: 0;}
+				margin: 0 0 20px;
+				padding: 10px 15px;
+				border: 1px solid #ccc;
+				color: #04AA6D;
+				box-sizing: border-box;
+				font-size: 14px;
+				font-wieght: 400;
+				-webkit-font-smoothing: antialiased;
+				-moz-osx-font-smoothing: grayscale;
+				transition: 0.2s linear;
+				&input:focus {
+				  color: #333;
+				  border: 1px solid #44c4e7;
+				}
 			}
+			button {
+				cursor: pointer;
+				background: #04AA6D;
+				width: 100%;
+				padding: 10px 15px;
+				border: 0;
+				color: #fff;
+				font-size: 14px;
+				font-weight: 400;
+				&:hover {
+					background: #369cb8;
+				}
+			}
+			
 
-			@media screen and (max-width: 400px) {
-			  .mainnav a, .mainnav .dropdown-btn {
-				text-align: center;
-				float: none;
-			  }
-			}
-			
-			.table-wrapper table {
-			  border-collapse: collapse;
-			  border: 1px solid grey;
-			  table-layout: auto;
-			  width: 100%; 
-			}
-			.table-wrapper th, .table-wrapper td{
-			  border: 1px solid grey;
-			}
-			
-			div.main #content h2 {
-				margin-top: 18px;
-				margin-bottom: 10px;
-			}
-			div.main #content h3 {
-				margin-top: 12px;
-				margin-bottom: 10px;
-			}
-			div.main #content p {
-				margin-top: 0px;
-				margin-bottom: 0px;
-			}
+			.error, .valid{display:none;}
+
 			
 		</style>
 
 		<script>
-			$(document).ready(function(){
-				$(".dropdown-btn").click(function() {
-					$(this).toggleClass("active");
-					var dropdownContent = $(this).next();
-					if ($(this).hasClass("active")) {
-						$(dropdownContent).show();
-					} else {
-						$(dropdownContent).hide();
-					}
-				});
-				$(".dropdown-btn").each(function() {
-					var dropdownContent = $(this).next();
-					if ($(this).hasClass("active")) {
-						$(dropdownContent).show();
-					} else {
-						$(dropdownContent).hide();
-					}
-				});
+		$(document).ready(function() {
+			//$('#username').focus();
+
+			$('#submit').click(function() {
+				event.preventDefault(); // prevent PageReLoad
+
+				var ValidEmail = $('#username').val() === 'tekniker'; // User validate
+				var ValidPassword = $('#password').val() === '1'; // Password validate
+
+				if (ValidEmail === true && ValidPassword === true) { // if ValidEmail & ValidPassword
+					$('.valid').css('display', 'block');
+					window.location = "./start.html"; // go to home.html
+				}
+				else {
+					$('.error').css('display', 'block'); // show error msg
+				}
 			});
+		});
 		</script>
 
 	</head>
 
 	<body>
 
-		<div class="mainnav">
-			<!--<a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fa fa-times-circle" aria-hidden="true"></i></a>-->
-			<a href="./index.html">Start</a>
-			<button class="dropdown-btn">Driftkort<i class="fa fa-caret-down"></i></button>
-			<div class="dropdown-container">
-				<button class="dropdown-btn">Fastighet 01<i class="fa fa-caret-down"></i></button>
-				<div class="dropdown-container">
-					<a href="./Fastighet01/Undercentral.html">Undercentral</a>
-				</div>
-			</div>
-			<a href="./about.html">Om</a>
-		</div>
-		
-			
-		<div class="main">
-			<div id="content">
-				<h1>Start</h1>
-				<p>Välkommen</p>
-			</div>
-		</div>
+		<section class="form">
+			<h2>Login</h2>
+			<p class="valid">Valid. Please wait a moment.</p>
+			<p class="error">Error. Please enter correct Username &amp; password.</p>
+			<form class="loginbox" autocomplete="off">
+				<input placeholder="Username" type="text" id="username" value="tekniker"></input>
+				<input placeholder="Password" type="password" id="password" value="1"></input>
+				<button id="submit" href="./start.html">Login</button>
+			</form>
+		</section>
 
 	</body>
 </html>
