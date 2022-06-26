@@ -25,7 +25,7 @@ systems:
       pump: CP103
 ---
 # Undercentral
-![](./Example/Fastighet01/Undercentral.svg)
+![](./Fastighet01/Undercentral.svg)
 ![[Sidintro]]
 #system-FJV
 ![[Framledningsreglering]]
