@@ -217,19 +217,23 @@
 				console.log('Version 0.0.0.33');
 				
 				
-				
-				var dropdown = document.getElementsByClassName("dropdown-btn");
-				for (var i = 0; i < dropdown.length; i++) {
-					dropdown[i].addEventListener("click", function() {
-						this.classList.toggle("active");
-						var dropdownContent = this.nextElementSibling;
-						if (dropdownContent.style.display === "block") {
-							dropdownContent.style.display = "none";
-						} else {
-							dropdownContent.style.display = "block";
-						}
-					});
-				}
+				$(".dropdown-btn").click(function() {
+					$(this).toggleClass("active");
+					var dropdownContent = $(this).next();
+					if ($(this).hasClass("active")) {
+						$(dropdownContent).show();
+					} else {
+						$(dropdownContent).hide();
+					}
+				});
+				$(".dropdown-btn").each(function() {
+					var dropdownContent = $(this).next();
+					if ($(this).hasClass("active")) {
+						$(dropdownContent).show();
+					} else {
+						$(dropdownContent).hide();
+					}
+				});
 				
 				
 				
@@ -391,11 +395,11 @@
 	<body>
 		<div class="mainnav">
 			<!--<a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fa fa-times-circle" aria-hidden="true"></i></a>-->
-			<button class="dropdown-btn">Driftkort<i class="fa fa-caret-down"></i></button>
+			<button class="dropdown-btn active">Driftkort<i class="fa fa-caret-down"></i></button>
 			<div class="dropdown-container">
-				<button class="dropdown-btn">Fastighet 01<i class="fa fa-caret-down"></i></button>
+				<button class="dropdown-btn active">Fastighet 01<i class="fa fa-caret-down"></i></button>
 				<div class="dropdown-container">
-					<a href="/Fastighet01/Undercentral.html">Undercentral</a>
+					<a class="active" href="./Fastighet01/Undercentral.html">Undercentral</a>
 				</div>
 			</div>
 			<a href="#about">About</a>
