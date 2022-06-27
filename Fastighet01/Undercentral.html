@@ -250,7 +250,7 @@
 					
 					//console.log(undercentral);
 					
-					labb2();
+					getTemplates();
 				});
 				
 				$.get( "/Fastighet01/Undercentral.yaml", function( data ) {
@@ -259,10 +259,47 @@
 					undercentral.yaml = YAML.parse(data);
 					
 					console.log(undercentral);
-					labb2();
+					getTemplates();
 				});
 				
 			});
+			
+			
+			var labb2doneCount = 0;
+			function getTemplates () {
+				if (++labb2doneCount == 2){
+					
+					var mallobjects2 = undercentral.raw.match(/!\[\[[^\]]+\]\]/gi);
+					console.log(mallobjects2);
+					var mallobjects = [];
+					$.each(mallobjects2, function(i, el){
+						if($.inArray(el, mallobjects) === -1) mallobjects.push(el);
+					});
+			
+					$.each(mallobjects, function(i, mallobject){
+						var test = mallobject.replace("![[","").replace("]]","");
+						mallTexter[test] = {};
+						var text = "/Malltexter/" + test;
+						
+						$.get( text+".md", function( data ) {
+							//console.log(data);
+							mallTexter[test].raw = data;
+						}).always(function() {
+							labb1();
+						});;
+						
+						$.get( text+".yaml", function( data ) {
+							//console.log(data);
+							mallTexter[test].yaml = YAML.parse(data);
+						}).always(function() {
+							labb1();
+						});;
+						
+					});
+					
+				}
+			}
+			
 			
 			var labb1doneCount = 0;
 			function labb1 () {
@@ -277,7 +314,7 @@
 						undercentral.text = undercentral.text.replace("![["+key+"]]", value.raw);
 					});
 					
-					console.log(undercentral.text);
+					//console.log(undercentral.text);
 					
 					var test1Old = 0;
 					var test1 = undercentral.text.indexOf("#system-", test1+1);
@@ -347,40 +384,9 @@
 				}
 			}
 			
-			var labb2doneCount = 0;
-			function labb2 () {
-				if (++labb2doneCount == 2){
-					
-					var mallobjects2 = undercentral.raw.match(/!\[\[[^\]]+\]\]/gi);
-					console.log(mallobjects2);
-					var mallobjects = [];
-					$.each(mallobjects2, function(i, el){
-						if($.inArray(el, mallobjects) === -1) mallobjects.push(el);
-					});
 			
-					$.each(mallobjects, function(i, mallobject){
-						var test = mallobject.replace("![[","").replace("]]","");
-						mallTexter[test] = {};
-						var text = "/Malltexter/" + test;
-						
-						$.get( text+".md", function( data ) {
-							//console.log(data);
-							mallTexter[test].raw = data;
-						}).always(function() {
-							labb1();
-						});;
-						
-						$.get( text+".yaml", function( data ) {
-							//console.log(data);
-							mallTexter[test].yaml = YAML.parse(data);
-						}).always(function() {
-							labb1();
-						});;
-						
-					});
-					
-				}
-			}
+			
+			
 			
 		</script>
 
