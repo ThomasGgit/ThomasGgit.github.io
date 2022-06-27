@@ -364,14 +364,14 @@
 						var text = "/Malltexter/" + test;
 						
 						$.get( text+".md", function( data ) {
-							console.log(data);
+							//console.log(data);
 							mallTexter[test].raw = data;
 						}).always(function() {
 							labb1();
 						});;
 						
 						$.get( text+".yaml", function( data ) {
-							console.log(data);
+							//console.log(data);
 							mallTexter[test].yaml = YAML.parse(data);
 						}).always(function() {
 							labb1();
