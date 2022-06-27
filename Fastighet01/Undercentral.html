@@ -360,17 +360,18 @@
 			
 					$.each(mallobjects, function(i, mallobject){
 					
-						var text = "/Malltexter/" + mallobject.replace("![[","").replace("]]","");
+						var test = mallobject.replace("![[","").replace("]]","");
+						var text = "/Malltexter/" + test;
 						
 						$.get( text+".md", function( data ) {
 							console.log(data);
-							mallTexter[mallobject].raw = data;
+							mallTexter[test].raw = data;
 							labb1();
 						});
 						
 						$.get( text+".yaml", function( data ) {
 							console.log(data);
-							mallTexter[mallobject].yaml = YAML.parse(data);
+							mallTexter[test].yaml = YAML.parse(data);
 							labb1();
 						});
 						
