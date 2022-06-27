@@ -215,10 +215,7 @@
 				
 			*/
 			var undercentral = {};
-			var AI_Controller = {};
-			var Framledningsreglering = {};
-			var Pumpstart = {};
-			var Sidintro = {};
+			var mallTexter = {};
 			
 			const stackedit = new Stackedit();
 			
@@ -253,7 +250,7 @@
 					
 					//console.log(undercentral);
 					
-					labb1();
+					labb2();
 				});
 				
 				$.get( "/Fastighet01/Undercentral.yaml", function( data ) {
@@ -262,71 +259,25 @@
 					undercentral.yaml = YAML.parse(data);
 					
 					console.log(undercentral);
-					labb1();
+					labb2();
 				});
-				
-				$.get( "/Malltexter/AI_Controller.md", function( data ) {
-					//console.log(data);
-					
-					AI_Controller.raw = data;
-					AI_Controller.yaml = null;
-					AI_Controller.text = data;
-					
-					//console.log(AI_Controller);
-					labb1();
-				});
-				
-				$.get( "/Malltexter/Framledningsreglering.md", function( data ) {
-					//console.log(data);
-					
-					Framledningsreglering.raw = data;
-					Framledningsreglering.yaml = null;
-					Framledningsreglering.text = data;
-					
-					//console.log(Framledningsreglering);
-					labb1();
-				});
-				
-				$.get( "/Malltexter/Pumpstart.md", function( data ) {
-					//console.log(data);
-					
-					Pumpstart.raw = data;
-					Pumpstart.yaml = null;
-					Pumpstart.text = data;
-					
-					//console.log(Pumpstart);
-					labb1();
-				});
-				
-				$.get( "/Malltexter/Sidintro.md", function( data ) {
-					//console.log(data);
-					
-					Sidintro.raw = data;
-					Sidintro.yaml = null;
-					Sidintro.text = data;
-					
-					//console.log(Sidintro);
-					labb1();
-				});
-				
 				
 			});
 			
-			var doneCount = 0;
+			var labb1doneCount = 0;
 			function labb1 () {
-				if (++doneCount == 6){
+				if (++labb1doneCount == 8){
 				
 					var el = $('#content');
 					
 					//console.log(undercentral.text);
 					
-					for (var i=0;i<10; i++) {
-						undercentral.text = undercentral.raw.replace("![[AI_Controller]]", AI_Controller.text);
-						undercentral.text = undercentral.text.replace("![[Framledningsreglering]]", Framledningsreglering.text);
-						undercentral.text = undercentral.text.replace("![[Pumpstart]]", Pumpstart.text);
-						undercentral.text = undercentral.text.replace("![[Sidintro]]", Sidintro.text);
+					undercentral.text = undercentral.raw;
+					$.each(mallTexter, function(key, value){
+						undercentral.text = undercentral.text.replace("![["+key+"]]", value.raw);
 					}
-					//console.log(undercentral.text);
+					
+					console.log(undercentral.text);
 					
 					var test1Old = 0;
 					var test1 = undercentral.text.indexOf("#system-", test1+1);
@@ -396,6 +347,37 @@
 				}
 			}
 			
+			var labb2doneCount = 0;
+			function labb2 () {
+				if (++labb2doneCount == 2){
+					
+					
+					var mallobjects2 = undercentral.raw.match(/!\[\[[^\]]+\]\]/gi);
+					console.log(mallobjects2);
+					var mallobjects = [];
+					$.each(mallobjects2, function(i, el){
+						if($.inArray(el, mallobjects) === -1) mallobjects.push(el);
+					});
+			
+					$.each(mallobjects, function(i, mallobject){
+					
+						var text = "/Malltexter/" + mallobject;
+						$.get( text+".md", function( data ) {
+							console.log(data);
+							mallTexter[mallobject].raw = data;
+							labb1();
+						});
+						
+						$.get( text+".yaml", function( data ) {
+							console.log(data);
+							mallTexter[mallobject].yaml = YAML.parse(data);
+							labb1();
+						});
+						
+					});
+					
+				}
+			}
 			
 		</script>
 
