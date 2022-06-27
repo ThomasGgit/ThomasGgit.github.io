@@ -351,7 +351,6 @@
 			function labb2 () {
 				if (++labb2doneCount == 2){
 					
-					
 					var mallobjects2 = undercentral.raw.match(/!\[\[[^\]]+\]\]/gi);
 					console.log(mallobjects2);
 					var mallobjects = [];
@@ -361,7 +360,8 @@
 			
 					$.each(mallobjects, function(i, mallobject){
 					
-						var text = "/Malltexter/" + mallobject;
+						var text = "/Malltexter/" + mallobject.replace("![[","").replace("]]","");
+						
 						$.get( text+".md", function( data ) {
 							console.log(data);
 							mallTexter[mallobject].raw = data;
