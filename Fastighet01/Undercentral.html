@@ -363,11 +363,11 @@
 							}
 							if (yaml2 != undefined) {
 								if (yaml2.components.forwardtemp != undefined)
-									text[i] = text[i].replace(/#forwardtemp/g, yaml2.components.forwardtemp);
+									text[i] = text[i].replace(/#forwardtemp/g, yaml2.components.forwardtemp.name);
 								if (yaml2.components.returntemp != undefined)
-									text[i] = text[i].replace(/#returntemp/g, yaml2.components.returntemp);
+									text[i] = text[i].replace(/#returntemp/g, yaml2.components.returntemp.name);
 								if (yaml2.components.pump != undefined)
-									text[i] = text[i].replace(/#pump/g, yaml2.components.pump);
+									text[i] = text[i].replace(/#pump/g, yaml2.components.pump.name);
 							}
 						}
 						

@@ -5,15 +5,19 @@ systems:
 
   - name: FJV
     components:
-      meter: PV601
-      forwardtemp: PV601-GT101
-      returntemp: PV601-GT401
+      meter:
+        name: PV601
+      forwardtemp:
+        name: PV601-GT101
+      returntemp:
+        name: PV601-GT401
           
         
   
   - name: VS01
     components:
-      meter: PV602
+      meter:
+        name: PV602
       forwardtemp: 
         name: GT102
         measuring:
@@ -41,12 +45,18 @@ systems:
           
           
 
-      returntemp: GT402
-      pump: CP102
+      returntemp:
+        name: GT402
+      pump:
+        name: CP102
   
   - name: VV01
     components:
-      meter: PV603
-      forwardtemp: GT103
-      returntemp: GT403
-      pump: CP103
+      meter:
+        name: PV603
+      forwardtemp:
+        name: GT103
+      returntemp:
+        name: GT403
+      pump:
+        name: CP103
