@@ -8,11 +8,38 @@ systems:
       meter: PV601
       forwardtemp: PV601-GT101
       returntemp: PV601-GT401
+          
+        
   
   - name: VS01
     components:
       meter: PV602
       forwardtemp: GT102
+        measuring:
+        - unit: °C
+        settings:
+        - description: Givarfel
+          alarmclass: A
+          fromTemplate: 
+          values: 
+          - value: 5 s
+            valueApiKey: webport:VS01_GT11_ADL
+        - description: Börvärde
+          fromTemplate: 
+          values: 
+          - value: 55.0 °C
+            valueApiKey: webport:VS01_GT11_SP
+        - description: Börvärdesavvikelse
+          alarmclass: B
+          fromTemplate: 
+          values: 
+          - value: ±3 °C
+            valueApiKey: webport:VS01_GT11_AD
+          - value: 10 min
+            valueApiKey: webport:VS01_GT11_ADL
+          
+          
+
       returntemp: GT402
       pump: CP102
   

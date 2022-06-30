@@ -275,7 +275,7 @@
 				if (++labb2doneCount == 2){
 					
 					var mallobjects2 = undercentral.raw.match(/!\[\[[^\]]+\]\]/gi);
-					console.log(mallobjects2);
+					//console.log(mallobjects2);
 					var mallobjects = [];
 					$.each(mallobjects2, function(i, el){
 						if($.inArray(el, mallobjects) === -1) mallobjects.push(el);
@@ -325,7 +325,7 @@
 					var test1 = undercentral.text.indexOf("#system-", test1+1);
 					var text = [];
 					while (test1 > 0) {
-						console.log(test1);
+						//console.log(test1);
 						text.push(undercentral.text.substring(test1Old, test1));
 						
 						
@@ -333,7 +333,7 @@
 						test1 = undercentral.text.indexOf("#system-", test1+1);
 					}
 					text.push(undercentral.text.substring(test1Old));
-					console.log(text);
+					//console.log(text);
 					
 					undercentral.text = "";
 					for (var i=0;i<text.length; i++) {
@@ -383,7 +383,7 @@
 					
 					
 					stackedit.on('fileChange', (file) => {
-						console.log(file);
+						//console.log(file);
 						el.html(file.content.html);
 					});
 				}
