@@ -396,6 +396,23 @@
 					}
 					//console.log(undercentral.text);
 					
+					
+					// Add settings table
+					var table = [];
+					table.push('Object|Settings|Alarm class|Description');
+					table.push('----|----|----|----');
+					
+					for (var system in undercentral.yaml.systems) {
+						for (var component in system.components) {
+							for (var setting in component.settings) {
+								table.push( system.name+'-'+component.name + '|' + setting.values[0].value + '|' + setting.alarmclass + '|' + setting.description );
+							}
+						}
+					}
+					
+					undercentral.text += '\n';
+					undercentral.text += table.join('\n');
+					
 					stackedit.openFile({
 						content: { text: undercentral.text }
 					}, true);
