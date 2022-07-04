@@ -418,10 +418,7 @@
 									txt3.alarmclass = undercentral.yaml.systems[indexSys].components[indexComp].settings[indexSett].alarmclass;
 								
 								var temp32 = false;
-								console.log(undercentral.yaml.systems[indexSys].components[indexComp].settings[indexSett]);
 								for (var indexValues in undercentral.yaml.systems[indexSys].components[indexComp].settings[indexSett].values) {
-									console.log(indexValues);
-									console.log(undercentral.yaml.systems[indexSys].components[indexComp].settings[indexSett].values[indexValues]);
 									if (indexValues > 0) {
 										txt3.settings += '<br />'
 										txt3.description += '<br />'
@@ -432,16 +429,18 @@
 										txt3.description += undercentral.yaml.systems[indexSys].components[indexComp].settings[indexSett].values[indexValues].description;
 									}
 								}
-								console.log(txt3.description);
+								
 								if (!temp32)
 									txt3.description = undercentral.yaml.systems[indexSys].components[indexComp].settings[indexSett].description;
 								
-								console.log(txt3.settings);
-								console.log(txt3.description);
 								tableData.push(txt3);
 							}
 						}
 					}
+					
+					
+					
+					tableRows.sort(SortByObjectname);
 					
 					var tableRows = [];
 					tableRows.push('Object|Settings|Alarm class|Description');
@@ -449,6 +448,8 @@
 					for (var index2 in tableData) {
 						tableRows.push( tableData[index2].object + '|' + tableData[index2].settings + '|' + tableData[index2].alarmclass + '|' + tableData[index2].description);
 					}
+					
+					systemsSidebarAddItem('Settings', 'settings');
 					undercentral.text += '\n## Settings\n';
 					undercentral.text += tableRows.join('\n');
 					
@@ -477,6 +478,11 @@
 				$(sidebar).append(txt2);
 			}
 			
+			function SortByName(a, b){
+				var aName = a.object.toLowerCase();
+				var bName = b.object.toLowerCase(); 
+				return ((aName < bName) ? -1 : ((aName > bName) ? 1 : 0));
+			}
 			
 		</script>
 
