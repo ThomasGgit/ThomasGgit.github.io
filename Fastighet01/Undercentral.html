@@ -338,12 +338,10 @@
 					//console.log(text);
 					
 					
-					var sidebar = $('#systemsSidebar');
-					//$(sidebar).html = '';
-					var txt2 = $("<a></a>").text('Home').attr('href', '#');
-					$(sidebar).append(txt2);
-							
-							
+					systemsSidebarAddItem();
+					systemsSidebarAddItem('Home', '');
+					
+					
 					// Replacing tags in each system-text 
 					undercentral.text = "";
 					for (var i=0;i<text.length; i++) {
@@ -362,8 +360,8 @@
 						text[i] = text[i].replace(/#system-[A-Ö,a-ö,0-9]+\s/i, function (x){
 							systemName = x.replace("#system-", "").trim();
 							
-							var txt2 = $("<a></a>").text(systemName).attr("href", '#system-'+systemName);
-							$(sidebar).append(txt2);
+							//var txt2 = $("<a></a>").text(systemName).attr("href", '#system-'+systemName);
+							systemsSidebarAddItem('systemName', 'system-'+systemName);
 							
 							return "## System " + systemName + "\n";
 						});
@@ -399,23 +397,21 @@
 					stackedit.on('fileChange', (file) => {
 						//console.log(file);
 						el.html(file.content.html);
-						
-						/*
-						var sidebar = $('#systemsSidebar');
-						var txt2 = $("<a></a>").text('Home').attr('href', '#');
-						$(sidebar).append(txt2);
-						
-						$('h2').each( function() {
-							var txt2 = $("<a></a>").text($(this).text()).attr("href", '#'+$(this).attr('id'));
-							$(sidebar).append(txt2);
-						});
-						*/
 					});
 				}
 			}
 			
 			
-			
+			function systemsSidebarAddItem (text, id) {
+				var sidebar = $('#systemsSidebar');
+				
+				if (text == null || text == '') {
+					$(sidebar).html = '';
+				}
+				
+				var txt2 = $("<a></a>").text(text).attr('href', '#'+id);
+				$(sidebar).append(txt2);
+			}
 			
 			
 		</script>
