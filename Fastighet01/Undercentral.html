@@ -284,7 +284,8 @@
 					$.each(mallobjects, function(i, mallobject){
 						var test = mallobject.replace("![[","").replace("]]","");
 						mallTexter[test] = {};
-						var text = "/Malltexter/" + test;
+						//var text = "/Malltexter/" + test + ".md";
+						var text = test;
 						
 						$.get( text+".md", function( data ) {
 							//console.log(data);
