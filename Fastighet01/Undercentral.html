@@ -385,6 +385,15 @@
 					stackedit.on('fileChange', (file) => {
 						//console.log(file);
 						el.html(file.content.html);
+						
+						var sidebar = $('#systemsSidebar');
+						var txt2 = $("<a></a>").text('Home').attr('href', '#');
+						$(sidebar).append(txt2);
+						
+						$('h2').each( function() {
+							var txt2 = $("<a></a>").text($(this).text()).attr("href", $(this).id());
+							$(sidebar).append(txt2);
+						});
 					});
 				}
 			}
@@ -411,11 +420,7 @@
 			<a href="/about.html">Om</a>
 		</div>
 		
-		<div class="sidebar">
-			<a href="#">Hem</a>
-			<a href="#system-fjv">FJV</a>
-			<a href="#system-vv01">VV01</a>
-			<a href="#system-vs01">VS01</a>
+		<div class="sidebar" id="systemsSidebar">
 		</div>
 			
 		<div class="main">
