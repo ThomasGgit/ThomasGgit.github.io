@@ -319,8 +319,8 @@
 					undercentral.text = undercentral.md;
 					$.each(mallTexter, function(key, value){
 						undercentral.text = undercentral.text.replace("![["+key+"]]", value.md);
-						//undercentral.text = undercentral.text.replace("![["+key+"]]", value.md);
-						//undercentral.text = undercentral.text.replace("![["+key+"]]", value.md);
+						undercentral.text = undercentral.text.replace("![["+key+"]]", value.md);
+						undercentral.text = undercentral.text.replace("![["+key+"]]", value.md);
 						/*var test55 = key.replace(/\//g, "\/");
 						re = new RegExp('!\[\[${test55}\]\]', 'gi');
 						undercentral.text = undercentral.text.replace(re, value.md);*/
