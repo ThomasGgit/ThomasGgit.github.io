@@ -318,9 +318,11 @@
 					// Replaces text with templates
 					undercentral.text = undercentral.md;
 					$.each(mallTexter, function(key, value){
-						//undercentral.text = undercentral.text.replace("![["+key+"]]", value.md);
-						re = new RegExp('!\[\[${key}\]\]', 'gi');
-						undercentral.text = undercentral.text.replace(re, value.md);
+						undercentral.text = undercentral.text.replace("![["+key+"]]", value.md);
+						undercentral.text = undercentral.text.replace("![["+key+"]]", value.md);
+						undercentral.text = undercentral.text.replace("![["+key+"]]", value.md);
+						//re = new RegExp('!\[\[${key}\]\]', 'gi');
+						//undercentral.text = undercentral.text.replace(re, value.md);
 					});
 					//console.log(undercentral.text);
 					
