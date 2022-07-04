@@ -318,12 +318,12 @@
 					// Replaces text with templates
 					undercentral.text = undercentral.md;
 					$.each(mallTexter, function(key, value){
-						//undercentral.text = undercentral.text.replace("![["+key+"]]", value.md);
-						//undercentral.text = undercentral.text.replace("![["+key+"]]", value.md);
-						//undercentral.text = undercentral.text.replace("![["+key+"]]", value.md);
-						var test55 = key.replace(/\//g, "\/");
+						undercentral.text = undercentral.text.replace("![["+key+"]]", value.md);
+						undercentral.text = undercentral.text.replace("![["+key+"]]", value.md);
+						undercentral.text = undercentral.text.replace("![["+key+"]]", value.md);
+						/*var test55 = key.replace(/\//g, "\/");
 						re = new RegExp('!\[\[${test55}\]\]', 'gi');
-						undercentral.text = undercentral.text.replace(re, value.md);
+						undercentral.text = undercentral.text.replace(re, value.md);*/
 					});
 					//console.log(undercentral.text);
 					
@@ -355,11 +355,11 @@
 						//console.log(text[i]);
 						
 						if (undercentral.yaml.cabinet != undefined)
-							text[i] = text[i].replace(/#pageinfo.cabinet/gi, undercentral.yaml.pageinfo.cabinet);
+							text[i] = text[i].replace(/#pageinfo\.cabinet/gi, undercentral.yaml.pageinfo.cabinet);
 						if (undercentral.yaml.address != undefined)
-							text[i] = text[i].replace(/#pageinfo.address/gi, undercentral.yaml.pageinfo.address);
+							text[i] = text[i].replace(/#pageinfo\.address/gi, undercentral.yaml.pageinfo.address);
 						if (undercentral.yaml.positioned != undefined)
-							text[i] = text[i].replace(/#pageinfo.positioned/gi, undercentral.yaml.pageinfo.positioned);
+							text[i] = text[i].replace(/#pageinfo\.positioned/gi, undercentral.yaml.pageinfo.positioned);
 						
 						var systemName;
 						text[i] = text[i].replace(/#system-[A-Ö,a-ö,0-9]+\s/i, function (x){
@@ -377,11 +377,11 @@
 							}
 							if (yaml2 != undefined) {
 								if (yaml2.components.forwardtemp != undefined)
-									text[i] = text[i].replace(/#components.forwardtemp/gi, yaml2.components.forwardtemp.name);
+									text[i] = text[i].replace(/#components\.forwardtemp/gi, yaml2.components.forwardtemp.name);
 								if (yaml2.components.returntemp != undefined)
-									text[i] = text[i].replace(/#components.returntemp/gi, yaml2.components.returntemp.name);
+									text[i] = text[i].replace(/#components\.returntemp/gi, yaml2.components.returntemp.name);
 								if (yaml2.components.pump != undefined)
-									text[i] = text[i].replace(/#components.pump/gi, yaml2.components.pump.name);
+									text[i] = text[i].replace(/#components\.pump/gi, yaml2.components.pump.name);
 							}
 						}
 						
