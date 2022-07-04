@@ -418,7 +418,8 @@
 									txt3.alarmclass = undercentral.yaml.systems[indexSys].components[indexComp].settings[indexSett].alarmclass;
 								
 								var temp32 = false;
-								for (var indexValues in undercentral.yaml.systems[indexSys].components[indexComp].settings.values) {
+								console.log(undercentral.yaml.systems[indexSys].components[indexComp].settings[indexSett]);
+								for (var indexValues in undercentral.yaml.systems[indexSys].components[indexComp].settings[indexSett].values) {
 									console.log(indexValues);
 									console.log(undercentral.yaml.systems[indexSys].components[indexComp].settings[indexSett].values[indexValues]);
 									if (indexValues > 0) {
