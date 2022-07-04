@@ -410,11 +410,11 @@
 								console.log(undercentral.yaml.systems[indexSys].components[indexComp].settings[indexSett]);
 								var txt3 = undercentral.yaml.systems[indexSys].name + '-' + undercentral.yaml.systems[indexSys].components[indexComp].name;
 								txt3 += '|';
-								txt3 = undercentral.yaml.systems[indexSys].components[indexComp].settings[indexSett].values[0].value;
+								txt3 += undercentral.yaml.systems[indexSys].components[indexComp].settings[indexSett].values[0].value;
 								txt3 += '|';
 								txt3 = undercentral.yaml.systems[indexSys].components[indexComp].settings[indexSett].alarmclass;
 								txt3 += '|';
-								txt3 = undercentral.yaml.systems[indexSys].components[indexComp].settings[indexSett].description;
+								txt3 += undercentral.yaml.systems[indexSys].components[indexComp].settings[indexSett].description;
 								table.push(txt3);
 							}
 						}
