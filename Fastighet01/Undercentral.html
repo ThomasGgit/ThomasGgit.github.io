@@ -402,13 +402,20 @@
 					table.push('Object|Settings|Alarm class|Description');
 					table.push('----|----|----|----');
 					
-					for (var system in undercentral.yaml.systems) {
-						console.log(system);
-						for (var component in system.components) {
-							console.log(component);
-							for (var setting in component.settings) {
-								console.log(setting);
-								table.push( system.name+'-'+component.name + '|' + setting.values[0].value + '|' + setting.alarmclass + '|' + setting.description );
+					for (var indexSys in undercentral.yaml.systems) {
+						console.log(undercentral.yaml.systems[indexSys]);
+						for (var indexComp in undercentral.yaml.systems[indexSys].components) {
+							console.log(undercentral.yaml.systems[indexSys].components[indexComp]);
+							for (var indexSett in undercentral.yaml.systems[indexSys].components[indexComp].settings) {
+								console.log(undercentral.yaml.systems[indexSys].components[indexComp].settings[indexSett]);
+								var txt3 = undercentral.yaml.systems[indexSys].name + '-' + undercentral.yaml.systems[indexSys].components[indexComp].name;
+								txt3 += '|';
+								txt3 = undercentral.yaml.systems[indexSys].components[indexComp].settings[indexSett].values[0].value;
+								txt3 += '|';
+								txt3 = undercentral.yaml.systems[indexSys].components[indexComp].settings[indexSett].alarmclass;
+								txt3 += '|';
+								txt3 = undercentral.yaml.systems[indexSys].components[indexComp].settings[indexSett].description;
+								table.push(txt3);
 							}
 						}
 					}
