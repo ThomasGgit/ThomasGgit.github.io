@@ -359,10 +359,7 @@
 						var systemName;
 						text[i] = text[i].replace(/#system-[A-Ö,a-ö,0-9]+\s/i, function (x){
 							systemName = x.replace("#system-", "").trim();
-							
-							//var txt2 = $("<a></a>").text(systemName).attr("href", '#system-'+systemName);
 							systemsSidebarAddItem('systemName', 'system-'+systemName);
-							
 							return "## System " + systemName + "\n";
 						});
 						//console.log(systemName);
@@ -407,6 +404,7 @@
 				
 				if (text == null || text == '') {
 					$(sidebar).html = '';
+					return;
 				}
 				
 				var txt2 = $("<a></a>").text(text).attr('href', '#'+id);
