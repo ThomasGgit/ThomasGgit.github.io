@@ -56,7 +56,7 @@ systems:
             - 5.0 °C
             - 10.0 °C
             - 20.0 °C
-            description_Y: Framledningstemperatur
+            description_Y: Framledningstemp.
             value_Y:
             - 65.0 °C
             - 55.0 °C
