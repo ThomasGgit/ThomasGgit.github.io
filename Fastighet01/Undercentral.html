@@ -228,7 +228,7 @@
 			const stackedit = new Stackedit();
 			
 			$(document).ready(function(){
-				console.log('Version 0.0.0.41');
+				console.log('Version 0.0.0.42');
 				
 				
 				$(".dropdown-btn").click(function() {
@@ -445,7 +445,7 @@
 					for (var index2 in tableData) {
 						tableRows.push( tableData[index2].object + '|' + tableData[index2].settings + '|' + tableData[index2].alarmclass + '|' + tableData[index2].description);
 					}
-					undercentral.text += '\n## Settings';
+					undercentral.text += '\n## Settings\n';
 					undercentral.text += tableRows.join('\n');
 					
 					
