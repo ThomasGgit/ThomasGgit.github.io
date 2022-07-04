@@ -1,12 +1,14 @@
 # Undercentral
 ![](./Undercentral.svg)
-![[Sidintro]]
+![[/malltexter/Sidintro]]
 #system-FJV
-![[Framledningsreglering]]
+![[/malltexter/Framledningsreglering]]
 #system-VV01
-![[Pumpstart]]
-![[Framledningsreglering]]
+![[/malltexter/Pumpstart]]
+![[/malltexter/Framledningsreglering]]
 #system-VS01
-![[AI_Controller]]
-![[Pumpstart]]
-![[Framledningsreglering]]
+![[/malltexter/AI_Controller]]
+![[/malltexter/Pumpstart]]
+![[/malltexter/Framledningsreglering]]
+
+#settings
