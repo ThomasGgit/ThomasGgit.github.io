@@ -415,8 +415,6 @@
 							for (var indexSett in undercentral.yaml.systems[indexSys].components[indexComp].settings) {
 								//console.log(undercentral.yaml.systems[indexSys].components[indexComp].settings[indexSett]);
 								var txt3 = {};
-								txt3.system = "";
-								txt3.component = "";
 								txt3.settings = "";
 								txt3.alarmclass = "";
 								txt3.description = "";
@@ -427,16 +425,52 @@
 								if (undercentral.yaml.systems[indexSys].components[indexComp].settings[indexSett].alarmclass != undefined)
 									txt3.alarmclass = undercentral.yaml.systems[indexSys].components[indexComp].settings[indexSett].alarmclass;
 								
+								
+								
 								var temp32 = false;
-								for (var indexValues in undercentral.yaml.systems[indexSys].components[indexComp].settings[indexSett].values) {
-									if (indexValues > 0) {
-										txt3.settings += '<br />'
-										txt3.description += '<br />'
+								if (undercentral.yaml.systems[indexSys].components[indexComp].settings[indexSett].type === "curve") {
+									temp32 = true;
+									
+									for (var indexX in undercentral.yaml.systems[indexSys].components[indexComp].settings[indexSett].values.value_X) {
+									
+										if (indexValues > 0) {
+											txt3.settings += '<br />'
+											txt3.description += '<br />'
+										}
+										
+										txt3.settings += undercentral.yaml.systems[indexSys].components[indexComp].settings[indexSett].values.value_X[indexX];
+										txt3.settings += '/';
+										txt3.settings += undercentral.yaml.systems[indexSys].components[indexComp].settings[indexSett].values.value_Y[indexX];
+										
+										txt3.description += undercentral.yaml.systems[indexSys].components[indexComp].settings[indexSett].values.description_X;
+										txt3.description += '/';
+										txt3.description += undercentral.yaml.systems[indexSys].components[indexComp].settings[indexSett].values.description_Y;
+										txt3.description += ' ' + (indexX+1);
+										
 									}
-									txt3.settings += undercentral.yaml.systems[indexSys].components[indexComp].settings[indexSett].values[indexValues].value;
-									if (undercentral.yaml.systems[indexSys].components[indexComp].settings[indexSett].values[indexValues].description != undefined) {
-										temp32 = true;
-										txt3.description += undercentral.yaml.systems[indexSys].components[indexComp].settings[indexSett].values[indexValues].description;
+									
+									txt3.settings += '<br />'
+									txt3.description += '<br />'
+									txt3.settings += undercentral.yaml.systems[indexSys].components[indexComp].settings[indexSett].values.value_min;
+									txt3.description += "Min " + undercentral.yaml.systems[indexSys].components[indexComp].settings[indexSett].values.description_Y;
+									
+									txt3.settings += '<br />'
+									txt3.description += '<br />'
+									txt3.settings += undercentral.yaml.systems[indexSys].components[indexComp].settings[indexSett].values.value_max;
+									txt3.description += "Max " + undercentral.yaml.systems[indexSys].components[indexComp].settings[indexSett].values.description_Y;
+								}
+									
+								else {
+									for (var indexValues in undercentral.yaml.systems[indexSys].components[indexComp].settings[indexSett].values) {
+										if (indexValues > 0) {
+											txt3.settings += '<br />'
+											txt3.description += '<br />'
+										}
+										txt3.settings += undercentral.yaml.systems[indexSys].components[indexComp].settings[indexSett].values[indexValues].value;
+										if (undercentral.yaml.systems[indexSys].components[indexComp].settings[indexSett].values[indexValues].description != undefined) {
+											temp32 = true;
+											txt3.description += undercentral.yaml.systems[indexSys].components[indexComp].settings[indexSett].values[indexValues].description;
+										}
 									}
 								}
 								

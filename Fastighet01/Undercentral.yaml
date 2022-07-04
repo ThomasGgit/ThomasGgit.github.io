@@ -45,25 +45,28 @@ systems:
           - value: 5 s
         - description: Börvärde
           fromTemplate: 
+          type: curve
           values: 
-          - type: curve
-            value: 
-              - X: -20.0 °C
-                Y: 65.0 °C
-              - X: -10.0 °C
-                Y: 55.0 °C
-              - X: -5.0 °C
-                Y: 45.0 °C
-              - X: 0.0 °C
-                Y: 36.0 °C
-              - X: 5.0 °C
-                Y: 32.0 °C
-              - X: 10.0 °C
-                Y: 28.0 °C
-              - X: 20.0 °C
-                Y: 20.0 °C
-              min: 20.0 °C
-              max: 70.0 °C
+            description_X: Utetemperatur
+            value_X:
+            - -20.0 °C
+            - -10.0 °C
+            - -5.0 °C
+            - 0.0 °C
+            - 5.0 °C
+            - 10.0 °C
+            - 20.0 °C
+            description_Y: Framledningstemperatur
+            value_Y:
+            - 65.0 °C
+            - 55.0 °C
+            - 45.0 °C
+            - 36.0 °C
+            - 32.0 °C
+            - 28.0 °C
+            - 20.0 °C
+            value_min: 20.0 °C
+            value_max: 70.0 °C
         - description: Börvärdesavvikelse
           alarmclass: B
           fromTemplate: 
