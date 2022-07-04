@@ -359,7 +359,7 @@
 						var systemName;
 						text[i] = text[i].replace(/#system-[A-Ö,a-ö,0-9]+\s/i, function (x){
 							systemName = x.replace("#system-", "").trim();
-							systemsSidebarAddItem('systemName', 'system-'+systemName);
+							systemsSidebarAddItem('systemName', 'System-'+systemName);
 							return "## System " + systemName + "\n";
 						});
 						//console.log(systemName);
@@ -403,11 +403,11 @@
 				var sidebar = $('#systemsSidebar');
 				
 				if (text == null || text == '') {
-					$(sidebar).html = '';
+					$(sidebar).empty();
 					return;
 				}
 				
-				var txt2 = $("<a></a>").text(text).attr('href', '#'+id);
+				var txt2 = $("<a></a>").text(text).attr('href', '#'+id.toLowerCase() );
 				$(sidebar).append(txt2);
 			}
 			
