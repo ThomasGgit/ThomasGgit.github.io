@@ -403,8 +403,11 @@
 					table.push('----|----|----|----');
 					
 					for (var system in undercentral.yaml.systems) {
+						console.log(system);
 						for (var component in system.components) {
+							console.log(component);
 							for (var setting in component.settings) {
+								console.log(setting);
 								table.push( system.name+'-'+component.name + '|' + setting.values[0].value + '|' + setting.alarmclass + '|' + setting.description );
 							}
 						}
