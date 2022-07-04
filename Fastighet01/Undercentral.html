@@ -398,9 +398,7 @@
 					
 					
 					// Add settings table
-					var table = [];
-					table.push('Object|Settings|Alarm class|Description');
-					table.push('----|----|----|----');
+					var tableData = [];
 					
 					for (var indexSys in undercentral.yaml.systems) {
 						console.log(undercentral.yaml.systems[indexSys]);
@@ -408,25 +406,51 @@
 							console.log(undercentral.yaml.systems[indexSys].components[indexComp]);
 							for (var indexSett in undercentral.yaml.systems[indexSys].components[indexComp].settings) {
 								console.log(undercentral.yaml.systems[indexSys].components[indexComp].settings[indexSett]);
-								var txt3 = undercentral.yaml.systems[indexSys].name + '-' + undercentral.yaml.systems[indexSys].components[indexComp].name;
-								txt3 += '|';
-								txt3 += undercentral.yaml.systems[indexSys].components[indexComp].settings[indexSett].values[0].value;
-								txt3 += '|';
-								txt3 += undercentral.yaml.systems[indexSys].components[indexComp].settings[indexSett].alarmclass;
-								txt3 += '|';
-								txt3 += undercentral.yaml.systems[indexSys].components[indexComp].settings[indexSett].description;
-								table.push(txt3);
+								var txt3 = {};
+								txt3.object = "";
+								txt3.settings = "";
+								txt3.alarmclass = "";
+								txt3.description = "";
+								
+								txt3.object = undercentral.yaml.systems[indexSys].name + '-' + undercentral.yaml.systems[indexSys].components[indexComp].name;
+								
+								if (undercentral.yaml.systems[indexSys].components[indexComp].settings[indexSett].alarmclass != undefined)
+									txt3.alarmclass = undercentral.yaml.systems[indexSys].components[indexComp].settings[indexSett].alarmclass;
+								
+								var temp32 = false;
+								for (var indexValues in undercentral.yaml.systems[indexSys].components[indexComp].settings.values) {
+									if (indexValues > 0) {
+										txt3.settings += '<br />'
+										txt3.description += '<br />'
+									}
+									txt3.settings += undercentral.yaml.systems[indexSys].components[indexComp].settings[indexSett].values[indexValues].value;
+									if (undercentral.yaml.systems[indexSys].components[indexComp].settings[indexSett].values[indexValues].description != undefined) {
+										temp32 = true;
+										txt3.description += undercentral.yaml.systems[indexSys].components[indexComp].settings[indexSett].values[indexValues].description;
+									}
+								}
+								if (!temp32)
+									txt3.description = undercentral.yaml.systems[indexSys].components[indexComp].settings[indexSett].description;
+								
+								tableData.push(txt3);
 							}
 						}
 					}
 					
+					var tableRows = [];
+					tableRows.push('Object|Settings|Alarm class|Description');
+					tableRows.push('----|----|----|----');
+					for (var index2 in tableData) {
+						tableRows.push( tableData[index2].object + '|' + tableData[index2].settings + '|' + tableData[index2].alarmclass + '|' + tableData[index2].description);
+					}
 					undercentral.text += '\n';
-					undercentral.text += table.join('\n');
+					undercentral.text += tableRows.join('\n');
 					
+					
+					// Convert markdown to html
 					stackedit.openFile({
 						content: { text: undercentral.text }
 					}, true);
-					
 					
 					stackedit.on('fileChange', (file) => {
 						//console.log(file);
