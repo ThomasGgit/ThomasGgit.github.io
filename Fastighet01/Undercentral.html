@@ -391,7 +391,7 @@
 						$(sidebar).append(txt2);
 						
 						$('h2').each( function() {
-							var txt2 = $("<a></a>").text($(this).text()).attr("href", $(this).id());
+							var txt2 = $("<a></a>").text($(this).text()).attr("href", $(this).attr('id'));
 							$(sidebar).append(txt2);
 						});
 					});
