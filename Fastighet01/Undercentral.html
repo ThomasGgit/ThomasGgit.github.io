@@ -359,7 +359,7 @@
 						var systemName;
 						text[i] = text[i].replace(/#system-[A-Ö,a-ö,0-9]+\s/i, function (x){
 							systemName = x.replace("#system-", "").trim();
-							systemsSidebarAddItem('systemName', 'System-'+systemName);
+							systemsSidebarAddItem(systemName, 'System-'+systemName);
 							return "## System " + systemName + "\n";
 						});
 						//console.log(systemName);
