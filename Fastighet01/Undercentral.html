@@ -419,6 +419,8 @@
 								
 								var temp32 = false;
 								for (var indexValues in undercentral.yaml.systems[indexSys].components[indexComp].settings.values) {
+									console.log(indexValues);
+									console.log(undercentral.yaml.systems[indexSys].components[indexComp].settings[indexSett].values[indexValues]);
 									if (indexValues > 0) {
 										txt3.settings += '<br />'
 										txt3.description += '<br />'
