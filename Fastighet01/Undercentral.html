@@ -350,11 +350,11 @@
 						//console.log(text[i]);
 						
 						if (undercentral.yaml.cabinet != undefined)
-							text[i] = text[i].replace(/#cabinet/gi, undercentral.yaml.cabinet);
+							text[i] = text[i].replace(/#pageinfo.cabinet/gi, undercentral.yaml.pageinfo.cabinet);
 						if (undercentral.yaml.address != undefined)
-							text[i] = text[i].replace(/#address/gi, undercentral.yaml.address);
+							text[i] = text[i].replace(/#pageinfo.address/gi, undercentral.yaml.pageinfo.address);
 						if (undercentral.yaml.positioned != undefined)
-							text[i] = text[i].replace(/#positioned/gi, undercentral.yaml.positioned);
+							text[i] = text[i].replace(/#pageinfo.positioned/gi, undercentral.yaml.pageinfo.positioned);
 						
 						var systemName;
 						text[i] = text[i].replace(/#system-[A-Ö,a-ö,0-9]+\s/i, function (x){
@@ -372,11 +372,11 @@
 							}
 							if (yaml2 != undefined) {
 								if (yaml2.components.forwardtemp != undefined)
-									text[i] = text[i].replace(/#forwardtemp/g, yaml2.components.forwardtemp.name);
+									text[i] = text[i].replace(/#components.forwardtemp/gi, yaml2.components.forwardtemp.name);
 								if (yaml2.components.returntemp != undefined)
-									text[i] = text[i].replace(/#returntemp/g, yaml2.components.returntemp.name);
+									text[i] = text[i].replace(/#components.returntemp/gi, yaml2.components.returntemp.name);
 								if (yaml2.components.pump != undefined)
-									text[i] = text[i].replace(/#pump/g, yaml2.components.pump.name);
+									text[i] = text[i].replace(/#components.pump/gi, yaml2.components.pump.name);
 							}
 						}
 						

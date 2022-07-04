@@ -1,4 +1,4 @@
 ### Allmänt
-Apparatskåp: #cabinet
-Adress: #address
-Placering: #positioned
+Apparatskåp: #pageinfo.cabinet
+Adress: #pageinfo.address
+Placering: #pageinfo.positioned

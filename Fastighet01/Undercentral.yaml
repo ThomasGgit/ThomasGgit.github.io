@@ -1,6 +1,10 @@
-cabinet: AS01
-address: Gatuvägen 13
-positioned: Plan 4
+pageinfo:
+  cabinet: AS01
+  address: Gatuvägen 13
+  positioned: Plan 4
+  created: 2022-07-04
+  lastrev: 2022-07-05
+  
 systems:
 
   - name: FJV
