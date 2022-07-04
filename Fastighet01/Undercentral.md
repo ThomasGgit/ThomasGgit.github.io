@@ -10,5 +10,3 @@
 ![[/Malltexter/AI_Controller]]
 ![[/Malltexter/Pumpstart]]
 ![[/Malltexter/Framledningsreglering]]
-
-#settings
