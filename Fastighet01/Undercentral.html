@@ -225,7 +225,7 @@
 			const stackedit = new Stackedit();
 			
 			$(document).ready(function(){
-				console.log('Version 0.0.0.39');
+				console.log('Version 0.0.0.40');
 				
 				
 				$(".dropdown-btn").click(function() {
@@ -251,7 +251,7 @@
 				$.get( "/Fastighet01/Undercentral.md", function( data ) {
 					//console.log(data);
 					
-					undercentral.raw = data;
+					undercentral.md = data;
 					
 					//console.log(undercentral);
 					
@@ -274,7 +274,7 @@
 			function getTemplates () {
 				if (++labb2doneCount == 2){
 					
-					var mallobjects2 = undercentral.raw.match(/!\[\[[^\]]+\]\]/gi);
+					var mallobjects2 = undercentral.md.match(/!\[\[[^\]]+\]\]/gi);
 					//console.log(mallobjects2);
 					var mallobjects = [];
 					$.each(mallobjects2, function(i, el){
@@ -289,7 +289,7 @@
 						
 						$.get( text+".md", function( data ) {
 							//console.log(data);
-							mallTexter[test].raw = data;
+							mallTexter[test].md = data;
 						}).always(function() {
 							labb1();
 						});;
@@ -316,9 +316,9 @@
 					//console.log(undercentral.text);
 					
 					// Replaces text with templates
-					undercentral.text = undercentral.raw;
+					undercentral.text = undercentral.md;
 					$.each(mallTexter, function(key, value){
-						undercentral.text = undercentral.text.replace("![["+key+"]]", value.raw);
+						undercentral.text = undercentral.text.replace("![["+key+"]]", value.md);
 					});
 					//console.log(undercentral.text);
 					
