@@ -401,11 +401,11 @@
 					var tableData = [];
 					
 					for (var indexSys in undercentral.yaml.systems) {
-						console.log(undercentral.yaml.systems[indexSys]);
+						//console.log(undercentral.yaml.systems[indexSys]);
 						for (var indexComp in undercentral.yaml.systems[indexSys].components) {
-							console.log(undercentral.yaml.systems[indexSys].components[indexComp]);
+							//console.log(undercentral.yaml.systems[indexSys].components[indexComp]);
 							for (var indexSett in undercentral.yaml.systems[indexSys].components[indexComp].settings) {
-								console.log(undercentral.yaml.systems[indexSys].components[indexComp].settings[indexSett]);
+								//console.log(undercentral.yaml.systems[indexSys].components[indexComp].settings[indexSett]);
 								var txt3 = {};
 								txt3.object = "";
 								txt3.settings = "";
@@ -432,6 +432,8 @@
 								if (!temp32)
 									txt3.description = undercentral.yaml.systems[indexSys].components[indexComp].settings[indexSett].description;
 								
+								console.log(txt3.settings);
+								console.log(txt3.description);
 								tableData.push(txt3);
 							}
 						}
@@ -443,7 +445,7 @@
 					for (var index2 in tableData) {
 						tableRows.push( tableData[index2].object + '|' + tableData[index2].settings + '|' + tableData[index2].alarmclass + '|' + tableData[index2].description);
 					}
-					undercentral.text += '\n';
+					undercentral.text += '\n## Settings';
 					undercentral.text += tableRows.join('\n');
 					
 					
