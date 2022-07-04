@@ -48,22 +48,20 @@ systems:
           values: 
           - type: curve
             value: 
-              X:
-              - -20.0 °C
-              - -10.0 °C
-              - -5.0 °C
-              - 0.0 °C
-              - 5.0 °C
-              - 10.0 °C
-              - 20.0 °C
-              Y:
-              - 65.0 °C
-              - 55.0 °C
-              - 45.0 °C
-              - 36.0 °C
-              - 32.0 °C
-              - 28.0 °C
-              - 20.0 °C
+              - X: -20.0 °C
+                Y: 65.0 °C
+              - X: -10.0 °C
+                Y: 55.0 °C
+              - X: -5.0 °C
+                Y: 45.0 °C
+              - X: 0.0 °C
+                Y: 36.0 °C
+              - X: 5.0 °C
+                Y: 32.0 °C
+              - X: 10.0 °C
+                Y: 28.0 °C
+              - X: 20.0 °C
+                Y: 20.0 °C
               min: 20.0 °C
               max: 70.0 °C
         - description: Börvärdesavvikelse
