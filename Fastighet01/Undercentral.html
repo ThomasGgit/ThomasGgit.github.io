@@ -59,7 +59,7 @@
 			  color: #04AA6D;
 			}
 
-			.mainnav a:hover:not(.active), .mainnav .dropdown-btn:hover:not(.active) {
+			.mainnav a:hover, .mainnav .dropdown-btn:hover {
 			  color: #000;
 			}
 			
@@ -201,8 +201,10 @@
 						Sen i undercentral.yaml läggs nya till och kan ändra aktuella inställningar
 					Börvärdeskurvor
 					-Läsa in templates dynamiskt efter vilka som används
-					Skapa bookmarks dynamiskt efter vilka system som finns
-					Ersätta taggar dynamiskt efter vilka som finns
+					-Skapa bookmarks dynamiskt efter vilka system som finns
+					-Ersätta taggar dynamiskt efter vilka som finns
+					Ersätta taggar dynamiskt efter vilka taggar som finns
+					Sidhuvud och sidfot
 					
 				Framtida:
 					Hämta eller ta emot info kring vad som är aktivt
@@ -217,6 +219,7 @@
 					Ladda upp andra filer
 					Tooltip/hänvisa vad som är standardtext kontra icke
 					Lägga in aktuella inställningar i texten, alternativt hänvisa eller tooltip
+					Skapa menysystem och sidor från webben
 				
 			*/
 			var undercentral = {};
@@ -382,6 +385,8 @@
 									text[i] = text[i].replace(/#components\.returntemp/gi, yaml2.components.returntemp.name);
 								if (yaml2.components.pump != undefined)
 									text[i] = text[i].replace(/#components\.pump/gi, yaml2.components.pump.name);
+								if (yaml2.components.meter != undefined)
+									text[i] = text[i].replace(/#components\.meter/gi, yaml2.components.meter.name);
 							}
 						}
 						

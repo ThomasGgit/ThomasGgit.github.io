@@ -2,8 +2,19 @@ pageinfo:
   cabinet: AS01
   address: Gatuvägen 13
   positioned: Plan 4
-  created: 2022-07-04
-  lastrev: 2022-07-05
+  status: review
+  createdby:
+    company: SÖE Konsult AB
+    author: Thomas Gustafsson
+    date: 2022-07-04
+  rev:
+  - company: SÖE Konsult AB
+    author: Thomas Gustafsson
+    date: 2022-07-05
+  - company: SÖE Konsult AB
+    author: Johan Geiborg
+    date: 2022-07-06
+  
   
 systems:
 
@@ -17,7 +28,6 @@ systems:
         name: PV601-GT401
           
         
-  
   - name: VS01
     components:
       meter:
