@@ -235,8 +235,8 @@
 					Implementera i webports dok?
 				
 			*/
-			var undercentral = {};
-			var mallTexter = {};
+			var pagedata = {};
+			var templates = {};
 			
 			const stackedit = new Stackedit();
 			
@@ -267,9 +267,9 @@
 				$.get( "/Documents/Real estate 01/Sub-central.md", function( data ) {
 					//console.log(data);
 					
-					undercentral.md = data;
+					pagedata.md = data;
 					
-					//console.log(undercentral);
+					//console.log(pagedata);
 					
 					getTemplates();
 				});
@@ -277,9 +277,9 @@
 				$.get( "/Documents/Real estate 01/Sub-central.yaml", function( data ) {
 					//console.log(data);
 					
-					undercentral.yaml = YAML.parse(data);
+					pagedata.yaml = YAML.parse(data);
 					
-					console.log(undercentral);
+					console.log(pagedata);
 					getTemplates();
 				});
 				
@@ -291,32 +291,32 @@
 				if (++labb2doneCount == 2){
 					
 					// Gets which templates are used i this document
-					var mallobjects2 = undercentral.md.match(/!\[\[[^\]]+\]\]/gi);
-					//console.log(mallobjects2);
+					var templatesobjects2 = pagedata.md.match(/!\[\[[^\]]+\]\]/gi);
+					//console.log(templatesobjects2);
 					
 					// filters so only unique templates are included
-					var mallobjects = [];
-					$.each(mallobjects2, function(i, el){
-						if($.inArray(el, mallobjects) === -1) mallobjects.push(el);
+					var templateobjects = [];
+					$.each(templatesobjects2, function(i, el){
+						if($.inArray(el, templateobjects) === -1) templateobjects.push(el);
 					});
 					
 					// Get template files
-					$.each(mallobjects, function(i, mallobject){
-						var test = mallobject.replace("![[","").replace("]]","");
-						mallTexter[test] = {};
-						//var text = "/Malltexter/" + test + ".md";
+					$.each(templateobjects, function(i, templateobject){
+						var test = templateobject.replace("![[","").replace("]]","");
+						templates[test] = {};
+						//var text = "/templates/" + test + ".md";
 						var text = test;
 						
 						$.get( "/Documents"+text+".md", function( data ) {
 							//console.log(data);
-							mallTexter[test].md = data;
+							templates[test].md = data;
 						}).always(function() {
 							labb1();
 						});;
 						
 						$.get( "/Documents"+text+".yaml", function( data ) {
 							//console.log(data);
-							mallTexter[test].yaml = YAML.parse(data);
+							templates[test].yaml = YAML.parse(data);
 						}).always(function() {
 							labb1();
 						});;
@@ -334,32 +334,32 @@
 					var el = $('#content');
 					
 					// Replaces text with templates
-					undercentral.text = undercentral.md;
-					$.each(mallTexter, function(key, value){
+					pagedata.text = pagedata.md;
+					$.each(templates, function(key, value){
 						// Replace every instans where the template are used
 						// This needs to be done nicer!
-						undercentral.text = undercentral.text.replace("![["+key+"]]", value.md);
-						undercentral.text = undercentral.text.replace("![["+key+"]]", value.md);
-						undercentral.text = undercentral.text.replace("![["+key+"]]", value.md);
+						pagedata.text = pagedata.text.replace("![["+key+"]]", value.md);
+						pagedata.text = pagedata.text.replace("![["+key+"]]", value.md);
+						pagedata.text = pagedata.text.replace("![["+key+"]]", value.md);
 						/*var test55 = key.replace(/\//g, "\/");
 						re = new RegExp('!\[\[${test55}\]\]', 'gi');
-						undercentral.text = undercentral.text.replace(re, value.md);*/
+						pagedata.text = pagedata.text.replace(re, value.md);*/
 					});
-					//console.log(undercentral.text);
+					//console.log(pagedata.text);
 					
 					
 					// Split different text of different systems
 					var test1Old = 0;
-					var test1 = undercentral.text.indexOf("#system-", test1+1);
+					var test1 = pagedata.text.indexOf("#system-", test1+1);
 					var text = [];
 					while (test1 > 0) {
 						//console.log(test1);
-						text.push(undercentral.text.substring(test1Old, test1));
+						text.push(pagedata.text.substring(test1Old, test1));
 						
 						test1Old = test1;
-						test1 = undercentral.text.indexOf("#system-", test1+1);
+						test1 = pagedata.text.indexOf("#system-", test1+1);
 					}
-					text.push(undercentral.text.substring(test1Old));
+					text.push(pagedata.text.substring(test1Old));
 					//console.log(text);
 					
 					
@@ -368,18 +368,18 @@
 					
 					
 					// Replacing tags in each system-text 
-					undercentral.text = "";
+					pagedata.text = "";
 					for (var i=0;i<text.length; i++) {
 						//console.log("hej1");
 					
 						//console.log(text[i]);
 						
-						if (undercentral.yaml.pageinfo.cabinet != undefined)
-							text[i] = text[i].replace(/#pageinfo\.cabinet/gi, undercentral.yaml.pageinfo.cabinet);
-						if (undercentral.yaml.pageinfo.address != undefined)
-							text[i] = text[i].replace(/#pageinfo\.address/gi, undercentral.yaml.pageinfo.address);
-						if (undercentral.yaml.pageinfo.positioned != undefined)
-							text[i] = text[i].replace(/#pageinfo\.positioned/gi, undercentral.yaml.pageinfo.positioned);
+						if (pagedata.yaml.pageinfo.cabinet != undefined)
+							text[i] = text[i].replace(/#pageinfo\.cabinet/gi, pagedata.yaml.pageinfo.cabinet);
+						if (pagedata.yaml.pageinfo.address != undefined)
+							text[i] = text[i].replace(/#pageinfo\.address/gi, pagedata.yaml.pageinfo.address);
+						if (pagedata.yaml.pageinfo.positioned != undefined)
+							text[i] = text[i].replace(/#pageinfo\.positioned/gi, pagedata.yaml.pageinfo.positioned);
 						
 						var systemName;
 						text[i] = text[i].replace(/#system-[A-Ö,a-ö,0-9]+\s/i, function (x){
@@ -391,9 +391,9 @@
 						
 						if (systemName != undefined) {
 							var yaml2;
-							for (var j=0;j<undercentral.yaml.systems.length; j++) {
-								if (undercentral.yaml.systems[j].name.trim() === systemName)
-									yaml2 = undercentral.yaml.systems[j];
+							for (var j=0;j<pagedata.yaml.systems.length; j++) {
+								if (pagedata.yaml.systems[j].name.trim() === systemName)
+									yaml2 = pagedata.yaml.systems[j];
 							}
 							if (yaml2 != undefined) {
 								if (yaml2.components.forwardtemp != undefined)
@@ -408,52 +408,52 @@
 						}
 						
 						//console.log("hej2");
-						undercentral.text += text[i];
+						pagedata.text += text[i];
 						//console.log("hej3");
 					}
-					//console.log(undercentral.text);
+					//console.log(pagedata.text);
 					
 					
 					// Add settings table
 					var tableData = [];
 					
-					for (var indexSys in undercentral.yaml.systems) {
-						//console.log(undercentral.yaml.systems[indexSys]);
-						for (var indexComp in undercentral.yaml.systems[indexSys].components) {
-							//console.log(undercentral.yaml.systems[indexSys].components[indexComp]);
-							for (var indexSett in undercentral.yaml.systems[indexSys].components[indexComp].settings) {
-								//console.log(undercentral.yaml.systems[indexSys].components[indexComp].settings[indexSett]);
+					for (var indexSys in pagedata.yaml.systems) {
+						//console.log(pagedata.yaml.systems[indexSys]);
+						for (var indexComp in pagedata.yaml.systems[indexSys].components) {
+							//console.log(pagedata.yaml.systems[indexSys].components[indexComp]);
+							for (var indexSett in pagedata.yaml.systems[indexSys].components[indexComp].settings) {
+								//console.log(pagedata.yaml.systems[indexSys].components[indexComp].settings[indexSett]);
 								var txt3 = {};
 								txt3.settings = "";
 								txt3.alarmclass = "";
 								txt3.description = "";
 								
-								txt3.system = undercentral.yaml.systems[indexSys].name;
-								txt3.component = undercentral.yaml.systems[indexSys].components[indexComp].name;
+								txt3.system = pagedata.yaml.systems[indexSys].name;
+								txt3.component = pagedata.yaml.systems[indexSys].components[indexComp].name;
 								
-								if (undercentral.yaml.systems[indexSys].components[indexComp].settings[indexSett].alarmclass != undefined)
-									txt3.alarmclass = undercentral.yaml.systems[indexSys].components[indexComp].settings[indexSett].alarmclass;
+								if (pagedata.yaml.systems[indexSys].components[indexComp].settings[indexSett].alarmclass != undefined)
+									txt3.alarmclass = pagedata.yaml.systems[indexSys].components[indexComp].settings[indexSett].alarmclass;
 								
 								
 								
 								var temp32 = false;
-								if (undercentral.yaml.systems[indexSys].components[indexComp].settings[indexSett].type === "curve") {
+								if (pagedata.yaml.systems[indexSys].components[indexComp].settings[indexSett].type === "curve") {
 									temp32 = true;
 									
-									for (var indexX in undercentral.yaml.systems[indexSys].components[indexComp].settings[indexSett].values.value_X) {
+									for (var indexX in pagedata.yaml.systems[indexSys].components[indexComp].settings[indexSett].values.value_X) {
 									
 										if (indexX > 0) {
 											txt3.settings += '<br />'
 											txt3.description += '<br />'
 										}
 										
-										txt3.settings += undercentral.yaml.systems[indexSys].components[indexComp].settings[indexSett].values.value_X[indexX];
+										txt3.settings += pagedata.yaml.systems[indexSys].components[indexComp].settings[indexSett].values.value_X[indexX];
 										txt3.settings += ' / ';
-										txt3.settings += undercentral.yaml.systems[indexSys].components[indexComp].settings[indexSett].values.value_Y[indexX];
+										txt3.settings += pagedata.yaml.systems[indexSys].components[indexComp].settings[indexSett].values.value_Y[indexX];
 										
-										txt3.description += undercentral.yaml.systems[indexSys].components[indexComp].settings[indexSett].values.description_X;
+										txt3.description += pagedata.yaml.systems[indexSys].components[indexComp].settings[indexSett].values.description_X;
 										txt3.description += ' / ';
-										txt3.description += undercentral.yaml.systems[indexSys].components[indexComp].settings[indexSett].values.description_Y;
+										txt3.description += pagedata.yaml.systems[indexSys].components[indexComp].settings[indexSett].values.description_Y;
 										var temp56 = Number(indexX)+1;
 										txt3.description += ' ' + temp56;
 										
@@ -461,31 +461,31 @@
 									
 									txt3.settings += '<br />'
 									txt3.description += '<br />'
-									txt3.settings += undercentral.yaml.systems[indexSys].components[indexComp].settings[indexSett].values.value_min;
-									txt3.description += "Min " + undercentral.yaml.systems[indexSys].components[indexComp].settings[indexSett].values.description_Y;
+									txt3.settings += pagedata.yaml.systems[indexSys].components[indexComp].settings[indexSett].values.value_min;
+									txt3.description += "Min " + pagedata.yaml.systems[indexSys].components[indexComp].settings[indexSett].values.description_Y;
 									
 									txt3.settings += '<br />'
 									txt3.description += '<br />'
-									txt3.settings += undercentral.yaml.systems[indexSys].components[indexComp].settings[indexSett].values.value_max;
-									txt3.description += "Max " + undercentral.yaml.systems[indexSys].components[indexComp].settings[indexSett].values.description_Y;
+									txt3.settings += pagedata.yaml.systems[indexSys].components[indexComp].settings[indexSett].values.value_max;
+									txt3.description += "Max " + pagedata.yaml.systems[indexSys].components[indexComp].settings[indexSett].values.description_Y;
 								}
 									
 								else {
-									for (var indexValues in undercentral.yaml.systems[indexSys].components[indexComp].settings[indexSett].values) {
+									for (var indexValues in pagedata.yaml.systems[indexSys].components[indexComp].settings[indexSett].values) {
 										if (indexValues > 0) {
 											txt3.settings += '<br />'
 											txt3.description += '<br />'
 										}
-										txt3.settings += undercentral.yaml.systems[indexSys].components[indexComp].settings[indexSett].values[indexValues].value;
-										if (undercentral.yaml.systems[indexSys].components[indexComp].settings[indexSett].values[indexValues].description != undefined) {
+										txt3.settings += pagedata.yaml.systems[indexSys].components[indexComp].settings[indexSett].values[indexValues].value;
+										if (pagedata.yaml.systems[indexSys].components[indexComp].settings[indexSett].values[indexValues].description != undefined) {
 											temp32 = true;
-											txt3.description += undercentral.yaml.systems[indexSys].components[indexComp].settings[indexSett].values[indexValues].description;
+											txt3.description += pagedata.yaml.systems[indexSys].components[indexComp].settings[indexSett].values[indexValues].description;
 										}
 									}
 								}
 								
 								if (!temp32)
-									txt3.description = undercentral.yaml.systems[indexSys].components[indexComp].settings[indexSett].description;
+									txt3.description = pagedata.yaml.systems[indexSys].components[indexComp].settings[indexSett].description;
 								
 								tableData.push(txt3);
 							}
@@ -504,13 +504,13 @@
 					}
 					
 					systemsSidebarAddItem('Settings', 'settings');
-					undercentral.text += '\n## Settings\n';
-					undercentral.text += tableRows.join('\n');
+					pagedata.text += '\n## Settings\n';
+					pagedata.text += tableRows.join('\n');
 					
 					
 					// Convert markdown to html
 					stackedit.openFile({
-						content: { text: undercentral.text }
+						content: { text: pagedata.text }
 					}, true);
 					
 					stackedit.on('fileChange', (file) => {
