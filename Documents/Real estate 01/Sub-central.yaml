@@ -1,0 +1,143 @@
+pageinfo:
+  prefix: 123456
+  cabinet: AS01
+  address: Gatuvägen 13
+  positioned: Plan 4
+  status: review
+  createdby:
+    company: SÖE Konsult AB
+    author: Thomas Gustafsson
+    date: 2022-07-04
+  rev:
+  - company: SÖE Konsult AB
+    author: Thomas Gustafsson
+    date: 2022-07-05
+  - company: SÖE Konsult AB
+    author: Johan Geiborg
+    date: 2022-07-06
+  
+  
+systems:
+
+  - name: FJV
+    components:
+      meter:
+        name: PV601
+      forwardtemp:
+        name: PV601-GT101
+      returntemp:
+        name: PV601-GT401
+          
+        
+  - name: VS01
+    components:
+      meter:
+        name: PV602
+      forwardtemp: 
+        name: GT102
+        measuring:
+        - unit: °C
+        settings:
+        - description: Givarfel
+          alarmclass: A
+          fromTemplate: 
+          values: 
+          - value: 5 s
+        - description: Börvärde
+          fromTemplate: 
+          type: curve
+          values: 
+            description_X: Utetemperatur
+            value_X:
+            - -20.0 °C
+            - -10.0 °C
+            - -5.0 °C
+            - 0.0 °C
+            - 5.0 °C
+            - 10.0 °C
+            - 20.0 °C
+            description_Y: Framledningstemp.
+            value_Y:
+            - 65.0 °C
+            - 55.0 °C
+            - 45.0 °C
+            - 36.0 °C
+            - 32.0 °C
+            - 28.0 °C
+            - 20.0 °C
+            value_min: 20.0 °C
+            value_max: 70.0 °C
+        - description: Börvärdesavvikelse
+          alarmclass: B
+          fromTemplate: 
+          values: 
+          - value: ±3 °C
+            apiKey: webport:VS01_GT11_AD
+          - value: 10 min
+            apiKey: webport:VS01_GT11_ADL
+          
+          
+
+      returntemp:
+        name: GT402
+      pump:
+        name: CP102
+        measuring:
+        - unit: 0/1
+        settings:
+        - description: Driftfel
+          alarmclass: A
+          fromTemplate: 
+          values: 
+          - value: 5 s
+        - description: Pumpstart
+          fromTemplate: 
+          values: 
+          - value: 15.0 °C
+            apiKey: webport:VS01_GT11_SP1
+            description: Startgräns fördröjd
+          - value: 1 h
+            apiKey: webport:VS01_GT11_SP2
+            description: Startfördröjning
+          - value: 7.0 °C
+            apiKey: webport:VS01_GT11_SP3
+            description: Direktstart
+          - value: 17.0 °C
+            apiKey: webport:VS01_GT11_SP4
+            description: Stoppgräns fördröjd
+          - value: 5 h
+            apiKey: webport:VS01_GT11_SP5
+            description: Stoppfördröjning
+  
+  - name: VV01
+    components:
+      meter:
+        name: PV603
+      forwardtemp:
+        name: GT103
+        measuring:
+        - unit: °C
+        settings:
+        - description: Givarfel
+          alarmclass: A
+          fromTemplate: 
+          values: 
+          - value: 5 s
+        - description: Börvärde
+          fromTemplate: 
+          values: 
+          - value: 55.0 °C
+            apiKey: webport:VV01_GT103_SP
+        - description: Börvärdesavvikelse
+          alarmclass: B
+          fromTemplate: 
+          values: 
+          - value: ±5 °C
+            apiKey: webport:VV01_GT103_AD
+          - value: 10 min
+            apiKey: webport:VV01_GT103_ADL
+      returntemp:
+        name: GT403
+      pump:
+        name: CP103
+        

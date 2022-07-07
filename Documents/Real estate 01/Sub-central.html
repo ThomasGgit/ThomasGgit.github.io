@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Sub-central</title>
+		
+		<meta name="robots" content="none">
+		
+		<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" /> 
+		<meta http-equiv="Pragma" content="no-cache" /> 
+		<meta http-equiv="Expires" content="0" />
+
+		<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+		<script src="https://unpkg.com/stackedit-js@1.0.7/docs/lib/stackedit.min.js"></script>
+		<script type="text/javascript" src="/yaml.js"></script>
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+		
+		<style>
+			body {
+				margin: 0;
+				font-family: "Lato", sans-serif;
+			}
+			
+			.main img {
+				width: 100%;
+				height: auto;
+			}
+			
+			.mainnav {
+				border-right-style: groove;
+				border-width: 1px;
+				margin: 0;
+				padding: 0;
+				width: 185px;
+				background-color: #f1f1f1;
+				position: fixed;
+				height: 100%;
+				overflow: hidden;
+				transition: 0.5s;
+			}
+
+			.mainnav a, .mainnav .dropdown-btn {
+				padding: 6px 0px 6px 16px;
+				text-decoration: none;
+				font-size: 20px;
+				color: #818181;
+				display: block;
+				border: none;
+				background: none;
+				width: 100%;
+				text-align: left;
+				cursor: pointer;
+				outline: none;
+				transition: 0.3s;
+			}
+			 
+			.mainnav .active {
+				color: #04AA6D;
+			}
+
+			.mainnav a:hover, .mainnav .dropdown-btn:hover {
+				color: #000;
+			}
+			
+			.mainnav .closebtn {
+				font-size: 24px;
+			}
+			.mainnav .fa-times-circle {
+				float: right;
+				padding-right: 28px;
+			}
+
+			/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+			.mainnav .dropdown-container {
+				display: none;
+				padding-left: 8px;
+			}
+			
+			/* Optional: Style the caret down icon */
+			.mainnav .fa-caret-down {
+				float: right;
+				padding-right: 8px;
+			}
+			
+			.sidebar {
+				border-right-style: groove;
+				border-width: 1px;
+				left: 186px;
+				margin: 0;
+				padding: 0;
+				width: 100px;
+				background-color: #f1f1f1;
+				position: fixed;
+				height: 100%;
+				overflow: auto;
+			}
+
+			.sidebar a {
+				display: block;
+				color: black;
+				padding: 10px;
+				text-decoration: none;
+			}
+			 
+			.sidebar a.active {
+				background-color: #04AA6D;
+				color: white;
+			}
+
+			.sidebar a:hover:not(.active) {
+				background-color: #555;
+				color: white;
+			}
+
+			div.main {
+				margin-left: 286px;
+				padding: 1px 16px;
+				/*height: 1000px;*/
+				padding-bottom: 10px;
+			}
+
+			@media screen and (max-width: 700px) {
+				.mainnav {
+					width: 100%;
+					height: auto;
+					position: relative;
+				}
+				.sidebar {
+					left: 0px;
+					width: 100%;
+					height: auto;
+					position: relative;
+				}
+				.sidebar a {float: left;}
+				.mainnav a, .mainnav .dropdown-btn {float: left;}
+				div.main {margin-left: 0;}
+			}
+
+			@media screen and (max-width: 400px) {
+				.sidebar a {
+					text-align: center;
+					float: none;
+				}
+				.mainnav a, .mainnav .dropdown-btn {
+					text-align: center;
+					float: none;
+				}
+			}
+			
+			.table-wrapper table {
+				border-collapse: collapse;
+				border: 1px solid grey;
+				table-layout: auto;
+				width: 100%; 
+			}
+			.table-wrapper th, .table-wrapper td{
+				border: 1px solid grey;
+			}
+			
+			div.main #content h2 {
+				margin-top: 18px;
+				margin-bottom: 10px;
+			}
+			div.main #content h3 {
+				margin-top: 12px;
+				margin-bottom: 10px;
+			}
+			div.main #content p {
+				margin-top: 0px;
+				margin-bottom: 0px;
+			}
+			
+			div.main #content .table-wrapper {
+				margin-top: 10px;
+				margin-bottom: 10px;
+			}
+			
+		</style>
+
+		<script>
+			/*
+				https://thomasggit.github.io/
+				
+				https://benweet.github.io/stackedit.js/
+				
+				https://zerodevx.github.io/zero-md/
+				
+				https://github.com/jeremyfa/yaml.js
+				
+				
+				Krav:
+					User managment
+					Log in through url
+					Uniq URL to each document
+					Edit documents direct in browser
+					Dynamiskt
+					Export till PDF
+					
+				Att lösa:
+					-Flera system
+					-Bookmarks
+					Klicka upp utförligare info
+					SVG hantering?
+					Tabeller med larm, inställningar, mätvärden
+					Inställningsvärden i tabellen, hur få till detta?
+						Använda template yaml som säger vilka som finns
+						Sen i undercentral.yaml läggs nya till och kan ändra aktuella inställningar
+						-Sortering av tabell
+						Börvärdeskurvor
+					Börvärdeskurvor
+					-Läsa in templates dynamiskt efter vilka som används
+					-Skapa bookmarks dynamiskt efter vilka system som finns
+					-Ersätta taggar dynamiskt efter vilka som finns
+					Ersätta taggar dynamiskt efter vilka taggar som finns
+					Sidhuvud och sidfot
+					
+				Framtida:
+					Language files
+					Hämta eller ta emot info kring vad som är aktivt
+						Kanske även aktuella inställningar för diverse?
+					Redigera sidor
+					redigering av metadata (yaml)
+						GUI instead of yaml
+					Export PDF och SVG
+					Sidhuvud och sidfot i export
+					SVG, där även symbolnamnen byts ut
+					Klicka på symbol i SVG så highlightas den i texten
+					Styles
+					Ladda upp andra filer
+					Tooltip/hänvisa vad som är standardtext kontra icke
+					Lägga in aktuella inställningar i texten, alternativt hänvisa eller tooltip
+					?Skapa menysystem och sidor från webben
+					AD-koppling med SSO
+					Implementera i webports dok?
+				
+			*/
+			var pagedata = {};
+			var templates = {};
+			
+			const stackedit = new Stackedit();
+			
+			$(document).ready(function(){
+				console.log('Version 0.0.0.42');
+				
+				
+				$(".dropdown-btn").click(function() {
+					$(this).toggleClass("active");
+					var dropdownContent = $(this).next();
+					if ($(this).hasClass("active")) {
+						$(dropdownContent).show();
+					} else {
+						$(dropdownContent).hide();
+					}
+				});
+				$(".dropdown-btn").each(function() {
+					var dropdownContent = $(this).next();
+					if ($(this).hasClass("active")) {
+						$(dropdownContent).show();
+					} else {
+						$(dropdownContent).hide();
+					}
+				});
+				
+				
+				
+				$.get( "/Documents/Real estate 01/Sub-central.md", function( data ) {
+					//console.log(data);
+					
+					pagedata.md = data;
+					
+					//console.log(pagedata);
+					
+					getTemplates();
+				});
+				
+				$.get( "/Documents/Real estate 01/Sub-central.yaml", function( data ) {
+					//console.log(data);
+					
+					pagedata.yaml = YAML.parse(data);
+					
+					console.log(pagedata);
+					getTemplates();
+				});
+				
+			});
+			
+			
+			var labb2doneCount = 0;
+			function getTemplates () {
+				if (++labb2doneCount == 2){
+					
+					// Gets which templates are used i this document
+					var templatesobjects2 = pagedata.md.match(/!\[\[[^\]]+\]\]/gi);
+					//console.log(templatesobjects2);
+					
+					// filters so only unique templates are included
+					var templateobjects = [];
+					$.each(templatesobjects2, function(i, el){
+						if($.inArray(el, templateobjects) === -1) templateobjects.push(el);
+					});
+					
+					// Get template files
+					$.each(templateobjects, function(i, templateobject){
+						var test = templateobject.replace("![[","").replace("]]","");
+						templates[test] = {};
+						//var text = "/templates/" + test + ".md";
+						var text = test;
+						
+						$.get( "/Documents"+text+".md", function( data ) {
+							//console.log(data);
+							templates[test].md = data;
+						}).always(function() {
+							replaceTexts();
+						});;
+						
+						$.get( "/Documents"+text+".yaml", function( data ) {
+							//console.log(data);
+							templates[test].yaml = YAML.parse(data);
+						}).always(function() {
+							replaceTexts();
+						});;
+						
+					});
+					
+				}
+			}
+			
+			var labb1doneCount = 0;
+			function replaceTexts () {
+				if (++labb1doneCount == 8){
+				
+					//console.log(templates);
+					var el = $('#content');
+					
+					// Replaces text with templates
+					pagedata.text = pagedata.md;
+					$.each(templates, function(key, value){
+						// Replace every instans where the template are used
+						// This needs to be done nicer!
+						pagedata.text = pagedata.text.replace("![["+key+"]]", value.md);
+						pagedata.text = pagedata.text.replace("![["+key+"]]", value.md);
+						pagedata.text = pagedata.text.replace("![["+key+"]]", value.md);
+						/*var test55 = key.replace(/\//g, "\/");
+						re = new RegExp('!\[\[${test55}\]\]', 'gi');
+						pagedata.text = pagedata.text.replace(re, value.md);*/
+					});
+					//console.log(pagedata.text);
+					
+					
+					// Split different text of different systems
+					var test1Old = 0;
+					var test1 = pagedata.text.indexOf("#system-", test1+1);
+					var text = [];
+					while (test1 > 0) {
+						//console.log(test1);
+						text.push(pagedata.text.substring(test1Old, test1));
+						
+						test1Old = test1;
+						test1 = pagedata.text.indexOf("#system-", test1+1);
+					}
+					text.push(pagedata.text.substring(test1Old));
+					//console.log(text);
+					
+					
+					systemsSidebarAddItem();
+					systemsSidebarAddItem('Home', '');
+					
+					
+					// Replacing tags in each system-text 
+					pagedata.text = "";
+					for (var i=0;i<text.length; i++) {
+						//console.log("hej1");
+					
+						//console.log(text[i]);
+						
+						if (pagedata.yaml.pageinfo.cabinet != undefined)
+							text[i] = text[i].replace(/#pageinfo\.cabinet/gi, pagedata.yaml.pageinfo.cabinet);
+						if (pagedata.yaml.pageinfo.address != undefined)
+							text[i] = text[i].replace(/#pageinfo\.address/gi, pagedata.yaml.pageinfo.address);
+						if (pagedata.yaml.pageinfo.positioned != undefined)
+							text[i] = text[i].replace(/#pageinfo\.positioned/gi, pagedata.yaml.pageinfo.positioned);
+						
+						var systemName;
+						text[i] = text[i].replace(/#system-[A-Ö,a-ö,0-9]+\s/i, function (x){
+							systemName = x.replace("#system-", "").trim();
+							systemsSidebarAddItem(systemName, 'System-'+systemName);
+							return "## System " + systemName + "\n";
+						});
+						//console.log(systemName);
+						
+						if (systemName != undefined) {
+							var yaml2;
+							for (var j=0;j<pagedata.yaml.systems.length; j++) {
+								if (pagedata.yaml.systems[j].name.trim() === systemName)
+									yaml2 = pagedata.yaml.systems[j];
+							}
+							if (yaml2 != undefined) {
+								if (yaml2.components.forwardtemp != undefined)
+									text[i] = text[i].replace(/#components\.forwardtemp/gi, yaml2.components.forwardtemp.name);
+								if (yaml2.components.returntemp != undefined)
+									text[i] = text[i].replace(/#components\.returntemp/gi, yaml2.components.returntemp.name);
+								if (yaml2.components.pump != undefined)
+									text[i] = text[i].replace(/#components\.pump/gi, yaml2.components.pump.name);
+								if (yaml2.components.meter != undefined)
+									text[i] = text[i].replace(/#components\.meter/gi, yaml2.components.meter.name);
+							}
+						}
+						
+						pagedata.text += text[i];
+					}
+					
+					
+					// Add settings table
+					var tableData = [];
+					
+					for (var indexSys in pagedata.yaml.systems) {
+						//console.log(pagedata.yaml.systems[indexSys]);
+						for (var indexComp in pagedata.yaml.systems[indexSys].components) {
+							//console.log(pagedata.yaml.systems[indexSys].components[indexComp]);
+							for (var indexSett in pagedata.yaml.systems[indexSys].components[indexComp].settings) {
+								//console.log(pagedata.yaml.systems[indexSys].components[indexComp].settings[indexSett]);
+								var txt3 = {};
+								txt3.settings = "";
+								txt3.alarmclass = "";
+								txt3.description = "";
+								
+								txt3.system = pagedata.yaml.systems[indexSys].name;
+								txt3.component = pagedata.yaml.systems[indexSys].components[indexComp].name;
+								
+								if (pagedata.yaml.systems[indexSys].components[indexComp].settings[indexSett].alarmclass != undefined)
+									txt3.alarmclass = pagedata.yaml.systems[indexSys].components[indexComp].settings[indexSett].alarmclass;
+								
+								
+								
+								var temp32 = false;
+								if (pagedata.yaml.systems[indexSys].components[indexComp].settings[indexSett].type === "curve") {
+									temp32 = true;
+									
+									for (var indexX in pagedata.yaml.systems[indexSys].components[indexComp].settings[indexSett].values.value_X) {
+									
+										if (indexX > 0) {
+											txt3.settings += '<br />'
+											txt3.description += '<br />'
+										}
+										
+										txt3.settings += pagedata.yaml.systems[indexSys].components[indexComp].settings[indexSett].values.value_X[indexX];
+										txt3.settings += ' / ';
+										txt3.settings += pagedata.yaml.systems[indexSys].components[indexComp].settings[indexSett].values.value_Y[indexX];
+										
+										txt3.description += pagedata.yaml.systems[indexSys].components[indexComp].settings[indexSett].values.description_X;
+										txt3.description += ' / ';
+										txt3.description += pagedata.yaml.systems[indexSys].components[indexComp].settings[indexSett].values.description_Y;
+										var temp56 = Number(indexX)+1;
+										txt3.description += ' ' + temp56;
+										
+									}
+									
+									txt3.settings += '<br />'
+									txt3.description += '<br />'
+									txt3.settings += pagedata.yaml.systems[indexSys].components[indexComp].settings[indexSett].values.value_min;
+									txt3.description += "Min " + pagedata.yaml.systems[indexSys].components[indexComp].settings[indexSett].values.description_Y;
+									
+									txt3.settings += '<br />'
+									txt3.description += '<br />'
+									txt3.settings += pagedata.yaml.systems[indexSys].components[indexComp].settings[indexSett].values.value_max;
+									txt3.description += "Max " + pagedata.yaml.systems[indexSys].components[indexComp].settings[indexSett].values.description_Y;
+								}
+									
+								else {
+									for (var indexValues in pagedata.yaml.systems[indexSys].components[indexComp].settings[indexSett].values) {
+										if (indexValues > 0) {
+											txt3.settings += '<br />'
+											txt3.description += '<br />'
+										}
+										txt3.settings += pagedata.yaml.systems[indexSys].components[indexComp].settings[indexSett].values[indexValues].value;
+										if (pagedata.yaml.systems[indexSys].components[indexComp].settings[indexSett].values[indexValues].description != undefined) {
+											temp32 = true;
+											txt3.description += pagedata.yaml.systems[indexSys].components[indexComp].settings[indexSett].values[indexValues].description;
+										}
+									}
+								}
+								
+								if (!temp32)
+									txt3.description = pagedata.yaml.systems[indexSys].components[indexComp].settings[indexSett].description;
+								
+								tableData.push(txt3);
+							}
+						}
+					}
+					
+					
+					
+					tableData.sort(SortByObjects);
+					
+					var tableRows = [];
+					tableRows.push('Object|Settings|Alarm class|Description');
+					tableRows.push('----|----|----|----');
+					for (var index2 in tableData) {
+						tableRows.push( tableData[index2].system+'-'+tableData[index2].component + '|' + tableData[index2].settings + '|' + tableData[index2].alarmclass + '|' + tableData[index2].description);
+					}
+					
+					systemsSidebarAddItem('Settings', 'settings');
+					pagedata.text += '\n## Settings\n';
+					pagedata.text += tableRows.join('\n');
+					
+					
+					// Convert markdown to html
+					stackedit.openFile({
+						content: { text: pagedata.text }
+					}, true);
+					
+					stackedit.on('fileChange', (file) => {
+						//console.log(file);
+						el.html(file.content.html);
+					});
+				}
+			}
+			
+			
+			function systemsSidebarAddItem (text, id) {
+				var sidebar = $('#systemsSidebar');
+				
+				if (text == null || text == '') {
+					$(sidebar).empty();
+					return;
+				}
+				var txt2 = $("<a></a>").text(text).attr('href', '#'+id.toLowerCase() );
+				$(sidebar).append(txt2);
+			}
+			
+			function SortByObjects(a, b){
+				var aSystem = a.system.toLowerCase();
+				var bSystem = b.system.toLowerCase(); 
+				if (aSystem < bSystem) 
+					return -1
+				else if (aSystem > bSystem)
+					return 1;
+				else {
+				
+					var aComp = a.component.toLowerCase();
+					var bComp = b.component.toLowerCase(); 
+					if (aComp < bComp) 
+						return -1
+					else if (aComp > bComp)
+						return 1;
+					else
+						return 0
+				}
+					
+			}
+			
+		</script>
+
+	</head>
+
+	<body>
+		<div class="mainnav">
+			<!--<a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fa fa-times-circle" aria-hidden="true"></i></a>-->
+			<a href="/start.html">Start</a>
+			<button class="dropdown-btn active">Documents<i class="fa fa-caret-down"></i></button>
+			<div class="dropdown-container">
+				<button class="dropdown-btn active">Real estate 01<i class="fa fa-caret-down"></i></button>
+				<div class="dropdown-container">
+					<a class="active" href="/Documents/Real estate 01/Sub-central.html">Sub-central</a>
+				</div>
+			</div>
+			<a href="">Settings</a>
+			<a href="/about.html">About</a>
+		</div>
+		
+		<div class="sidebar" id="systemsSidebar">
+		</div>
+			
+		<div class="main">
+			<div id="content"></div>
+		</div>
+
+	</body>
+</html>
