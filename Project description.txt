@@ -1,47 +1,60 @@
 Webserver for documentation.
 
-Documents are able to use templates, and the document generates each time its loaded.
+Documents are written in Markdown.
 
-Documents are able to use #tags to replace with names of components.
+Documents are able to use templates, and the document is generated each time its loaded.
+Documents are able to use #tags to replace with names of components (and settings in the future).
 
-There need to be support for URLs to come direct to a specific document.
+There need to be support for URLs to be able to link to a specific document.
+
+I have made a simple PoC to test the functionality of Markdown, templates and tags. https://thomasggit.github.io/
+And de sourcecode can be found here: https://github.com/ThomasGgit/ThomasGgit.github.io
+
+Use github for the development.
 
 Stage 1:
-	Webserver
-	User managment (not in browser)
+	Webserver service
+	User managment (edit in browser comes later)
 	No access without login first
 	Read current files from disk, no editing in browser
-	Support for language file
+	Support for language file for system texts
+	Improve design of webpage
+	Client side framework (jquery? react? something else?)
 	Support for Stylesheets
-	Markdown engine
+	Markdown text engine (thinking it should generate html on server side)
 	
-	Insert templates
-	Replace #tags
-	Generate table
-	Convert to HTML
-	Generate shortcuts/bookmarks for menu
+	Program flow example when documents are loaded:
+		Read files
+		Insert templates
+		Look for system-tags
+		Replace #tags in each system
+		Generate table
+		Convert to HTML
+		Send to browser
+		Browser generates shortcuts/bookmarks for menu?
 
 
 Stage 2:
-	Exapandable texts to see more advanced description
-	Able to see component settings values in body text, probebly with the use of #tags
+	Editing documents in browser (with preview?)
+	Editing menu in browser
+	Support for exapandable texts in docuements to see more advanced description
+	Support for component settings in body text, probably with the use of #tags
 	User managment (in browser)
 	Document header and footer
-	Editing documents
-	Editing menu
 	Add other filetypes (pdf)
 	Export documents as pdf
-	Export SVG for WebPort
+	Export SVG for WebPort backgound
 	
 Stage 3:
-	GUI for YAML
+	GUI for YAML config
 	Insert yaml settings from templates
 	API (client or server, havent decided yet)
 	Able to update component settings values from API
 	
 Future:
-	Connection to AD and able to use SSO
-	Some kind of mark which texts are templates and which are not
+	Be able to visualize which functions in the text that is enabled in PLC (some kind of code-in-text?)
+	Connection to AD and able to use Single sign on
+	Some kind of mark which texts are templates and which are not?
 	SVG texts also uses #tags
 	Click on symbol i SVG and highligt in text
 	Implement direct in WebPort docs?
