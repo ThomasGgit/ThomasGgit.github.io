@@ -1,5 +1,5 @@
 # Undercentral
-![](./Undercentral.svg)
+![](./Sub-central.svg)
 ![[/Malltexter/Sidintro]]
 #system-FJV
 ![[/Malltexter/Framledningsreglering]]

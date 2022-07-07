@@ -86,7 +86,7 @@
 			.sidebar {
 				border-right-style: groove;
 				border-width: 1px;
-				left: 189px;
+				left: 186px;
 				margin: 0;
 				padding: 0;
 				width: 100px;
@@ -114,7 +114,7 @@
 			}
 
 			div.main {
-				margin-left: 285px;
+				margin-left: 286px;
 				padding: 1px 16px;
 				/*height: 1000px;*/
 				padding-bottom: 10px;
@@ -264,7 +264,7 @@
 				
 				
 				
-				$.get( "/Fastighet01/Undercentral.md", function( data ) {
+				$.get( "/Documents/Real estate 01/Sub-central.md", function( data ) {
 					//console.log(data);
 					
 					undercentral.md = data;
@@ -274,7 +274,7 @@
 					getTemplates();
 				});
 				
-				$.get( "/Fastighet01/Undercentral.yaml", function( data ) {
+				$.get( "/Documents/Real estate 01/Sub-central.yaml", function( data ) {
 					//console.log(data);
 					
 					undercentral.yaml = YAML.parse(data);
@@ -307,14 +307,14 @@
 						//var text = "/Malltexter/" + test + ".md";
 						var text = test;
 						
-						$.get( text+".md", function( data ) {
+						$.get( "/Documents"+text+".md", function( data ) {
 							//console.log(data);
 							mallTexter[test].md = data;
 						}).always(function() {
 							labb1();
 						});;
 						
-						$.get( text+".yaml", function( data ) {
+						$.get( "/Documents"+text+".yaml", function( data ) {
 							//console.log(data);
 							mallTexter[test].yaml = YAML.parse(data);
 						}).always(function() {
@@ -565,7 +565,7 @@
 			<div class="dropdown-container">
 				<button class="dropdown-btn active">Real estate 01<i class="fa fa-caret-down"></i></button>
 				<div class="dropdown-container">
-					<a class="active" href="/Fastighet01/Undercentral.html">Sub-central</a>
+					<a class="active" href="/Documents/Real estate 01/Sub-central.html">Sub-central</a>
 				</div>
 			</div>
 			<a href="">Settings</a>
