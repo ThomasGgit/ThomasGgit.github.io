@@ -311,14 +311,14 @@
 							//console.log(data);
 							templates[test].md = data;
 						}).always(function() {
-							labb1();
+							replaceTexts();
 						});;
 						
 						$.get( "/Documents"+text+".yaml", function( data ) {
 							//console.log(data);
 							templates[test].yaml = YAML.parse(data);
 						}).always(function() {
-							labb1();
+							replaceTexts();
 						});;
 						
 					});
@@ -328,7 +328,7 @@
 			
 			
 			var labb1doneCount = 0;
-			function labb1 () {
+			function replaceTexts () {
 				if (++labb1doneCount == 8){
 				
 					var el = $('#content');
@@ -407,11 +407,8 @@
 							}
 						}
 						
-						//console.log("hej2");
 						pagedata.text += text[i];
-						//console.log("hej3");
 					}
-					//console.log(pagedata.text);
 					
 					
 					// Add settings table
