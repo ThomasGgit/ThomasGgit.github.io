@@ -1,37 +1,43 @@
-Webserver for documentation.
+Webserver service for documentation.
+Service written in C#?
+
+Each customer runs its own instance of this service.
 
 Documents are written in Markdown.
+Configuration for documents are defined in yaml.
 
 Documents are able to use templates, and the document is generated each time its loaded.
 Documents are able to use #tags to replace with names of components (and settings in the future).
+Different parts in the document for each system is separated with #system-tags
 
 There need to be support for URLs to be able to link to a specific document.
 
 I have made a simple PoC to test the functionality of Markdown, templates and tags. https://thomasggit.github.io/
-And de sourcecode can be found here: https://github.com/ThomasGgit/ThomasGgit.github.io
+And the sourcecode can be found here https://github.com/ThomasGgit/ThomasGgit.github.io
+It´s just a static page with javascript.
 
-Use github for the development.
+Use our github for the development.
+
 
 Stage 1:
 	Webserver service
 	User managment (edit in browser comes later)
 	No access without login first
-	Read current files from disk, no editing in browser
+	Read files and folders from disk (editing in browser comes later)
 	Support for language file for system texts
-	Improve design of webpage
+	The design of the PoC needs to be improved
 	Client side framework (jquery? react? something else?)
-	Support for Stylesheets
-	Markdown text engine (thinking it should generate html on server side)
-	
-	Program flow example when documents are loaded:
-		Read files
-		Insert templates
-		Look for system-tags
-		Replace #tags in each system
-		Generate table
-		Convert to HTML
-		Send to browser
-		Browser generates shortcuts/bookmarks for menu?
+	Support for Stylesheets to brand the design for each customer
+	Markdown text engine (think it should generate html on the server side)
+		Program flow example when documents are loaded:
+			Read files (.md, .yaml)
+			Insert templates
+			Look for system-tags
+			Replace #tags in each system
+			Generate table
+			Convert to HTML
+			Send to browser
+			Browser generates shortcuts/bookmarks for menu?
 
 
 Stage 2:
@@ -41,7 +47,7 @@ Stage 2:
 	Support for component settings in body text, probably with the use of #tags
 	User managment (in browser)
 	Document header and footer
-	Add other filetypes (pdf)
+	Add other filetypes (pdf, or maybe word files that converts to pdf so that the original can be downloaded)
 	Export documents as pdf
 	Export SVG for WebPort backgound
 	
@@ -52,10 +58,17 @@ Stage 3:
 	Able to update component settings values from API
 	
 Future:
+	Version/history of the documents (add som kind of git functionality?)
+	Changelog
+	System log (logins, restarts)
+	Licensing?
 	Be able to visualize which functions in the text that is enabled in PLC (some kind of code-in-text?)
 	Connection to AD and able to use Single sign on
 	Some kind of mark which texts are templates and which are not?
 	SVG texts also uses #tags
 	Click on symbol i SVG and highligt in text
 	Implement direct in WebPort docs?
+	Cloud service?
+	HTTPS
+	
 	
